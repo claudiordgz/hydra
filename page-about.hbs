@@ -1,0 +1,42 @@
+{{!< default}}
+{{#contentFor "customBodyClass"}}page-about{{/contentFor}}
+{{#post}}
+<main class="body-content" role="main">
+	<section class="{{post_class}} has-sub-meta">
+		<div class="post-header has-background"
+			{{#if image}}
+				style="background-image: url({{image}})"
+			{{else}}
+				{{#if author.cover}}
+					style="background-image: url({{author.cover}})"
+				{{else}} 
+					{{#if @blog.cover}}
+					style="background-image: url({{@blog.cover}})"
+					{{/if}}
+				{{/if}}
+			{{/if}}>
+			<div class="header-wrap">
+				<h2 class="post-title">Hello, I am {{author.name}}</h2>				
+				<div class="post-meta"><i class="fa fa-home"></i> <span>{{author.location}}</span> <i class="fa fa-globe"></i> <a href="{{author.website}}">{{author.website}}</a></div>
+            	<div class="line"></div> 
+            	<div class="post-meta">{{author.bio}}</div>           	                           
+			</div>
+		</div>
+		<div class="post-content">
+			{{content}}
+			<p> 
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- AboutAd -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-1525337072631150"
+				     data-ad-slot="9652812229"
+				     data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</p>
+		</div>			
+	</section>
+</main>
+{{/post}}
