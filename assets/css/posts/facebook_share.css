@@ -1,0 +1,17 @@
+.demo-card-wide.mdl-card {
+    width: 512px;
+    margin: 0 auto;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/welcome_card_tuts.png') center;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+body {
+    padding: 20px 0 0;
+    background: #fafafa;
+    position: relative;
+}
