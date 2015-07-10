@@ -9,10 +9,6 @@
     color: #fff;
     height: 176px;
     background: url('https://farm1.staticflickr.com/520/19369967005_0dc811c9a0.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
