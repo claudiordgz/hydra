@@ -1,4 +1,11 @@
-<div id="site-intro" {{#if @blog.cover}} class="covered" style="background-image: url({{@blog.cover}})"{{/if}}
+<div id="site-intro" 
+	{{#if tag.image}}
+		class="covered" style="background-image: url({{tag.image}});"
+	{{else}} 
+		{{#if @blog.cover}}
+		class="covered" style="background-image: url({{@blog.cover}});"
+		{{/if}}
+	{{/if}}
 	data-more-button-style="icon-and-text" {{!More detail button option: change it to 'icon-and-text' or 'button-only' or 'icon-only'}}
 	>
 	<div class="intro-wrap">
