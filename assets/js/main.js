@@ -1365,11 +1365,48 @@ var sfApp={
             var $imgList=$('.post-content').find('img');
             if($imgList.length){
                 $imgList.each(function(index, el) {
-                    var alt=$(this).attr('alt');     
+                    var alt=$(this).attr('alt');                         
                     $(this).addClass('img-responsive'); 
-                    $(this).addClass(alt);                      
+                    $(this).addClass(alt);   
                     if(alt.indexOf('no-responsive')>=0){                        
                         $(this).removeClass('img-responsive');
+                    }                    
+                    if(alt.indexOf('fullscreen-img')>=0){
+                        $(this).wrap('<span class="fullscreen-img-wrap"></span>');
+                        var $fullscreenImgWrap=$(this).closest('.fullscreen-img-wrap');
+                        $(this).on('load', function(){
+                            $fullscreenImgWrap.css({'height': $(this).outerHeight()});    
+                        });                                                    
+                    }                    
+                    else if( alt.indexOf('popup-preview')>=0 || $('body').data('auto-image-popup-preview') ){
+                        $(this).wrap( '<a class="popup-preview" href="' + $(this).attr('src') + '"></a>' );
+                        var $wrap = $(this).parent();                        
+                        if( alt.indexOf( 'alignright' ) >=0 ) {
+                            $wrap.addClass( 'alignright' );
+                        }
+                        if( alt.indexOf( 'alignleft' ) >=0 ) {
+                            $wrap.addClass( 'alignleft' );
+                        }
+                        if( alt.indexOf( 'aligncenter' ) >=0 ) {
+                            $wrap.addClass( 'aligncenter' );
+                        }
+                        $('.popup-preview').magnificPopup({
+                            type: 'image',
+                            closeOnContentClick: true,
+                            closeBtnInside: false,
+                            fixedContentPos: true,
+                            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+                            image: {
+                                verticalFit: true
+                            },
+                            gallery: {
+                                enabled: true
+                            },
+                            zoom: {
+                                enabled: true,
+                                duration: 300 // don't foget to change the duration also in CSS
+                            }
+                        });
                     }
                 });
             }
