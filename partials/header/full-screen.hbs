@@ -30,7 +30,11 @@
 	<div class="full-screen-nav-wrap">
 		<div class="full-screen-nav-wrap-inner">			
 			<ul class="full-screen-nav-items">
-				{{>menu-items}}
+				{{#if @blog.navigation}}
+					{{navigation}}
+				{{else}}
+					{{>menu-items}}
+				{{/if}}
 			</ul>
 		</div>
 	</div>

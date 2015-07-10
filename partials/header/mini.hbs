@@ -21,7 +21,11 @@
 			</a>
 			<div class="mini-nav">				
 				<ul class="mini-nav-items">
-					{{>menu-items}}
+					{{#if @blog.navigation}}
+						{{navigation}}
+					{{else}}
+						{{>menu-items}}
+					{{/if}}
 				</ul>			
 			</div>
 		</div>
