@@ -3200,7 +3200,11 @@ pre.line-numbers > code span {
 	line-height: 35px;
 	font-weight: normal;
 }
-@media only screen and (min-width: 1170px) {	
+
+.adslot_1 { width: 320px; height: 100px; }
+
+@media only screen and (min-width: 1170px) {
+	.adslot_1 { width: 728px; height: 90px; }
 	#site-intro.left-style .intro-wrap .intro-text,
 	#site-intro.right-style .intro-wrap .intro-text{		
 		padding-left: 0;
@@ -3212,7 +3216,9 @@ pre.line-numbers > code span {
 		padding-right: 40px;
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 979px) {	
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+	.adslot_1 { width: 728px; height: 90px; }
+
 	.header.header-standard .header-wrap .nav-container{
 		position: relative;
 	}
@@ -3342,6 +3348,8 @@ pre.line-numbers > code span {
 	}
 }
 @media only screen and (max-width: 767px) {
+	.adslot_1 { width: 728px; height: 90px; }
+
 	*, body {	
 		font-size: 16px;
 		line-height: 30px;
@@ -3601,6 +3609,8 @@ pre.line-numbers > code span {
 }
 
 @media only screen and (max-width: 480px) {
+	.adslot_1 { width: 320px; height: 100px; }
+
 	*, body {
 		font-size: 16px;
 		line-height: 30px;
@@ -3805,7 +3815,9 @@ pre.line-numbers > code span {
 		margin-bottom: 0px;
 	}
 }
-@media only screen and (max-width: 360px) {	
+@media only screen and (max-width: 360px) {
+	.adslot_1 { width: 320px; height: 100px; }
+
 	#site-intro .intro-wrap .intro-text .author-avatar{
 		width: 80px;
 		height: 80px;
@@ -3849,6 +3861,8 @@ pre.line-numbers > code span {
 
 
 @media only screen and (max-height: 480px) {
+	.adslot_1 { display: none; }
+
 	.header {
 		padding: 15px 20px 15px 20px;
 	}
