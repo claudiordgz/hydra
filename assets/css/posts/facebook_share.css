@@ -1,5 +1,5 @@
-@import "https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import  url('https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css');
+@import  url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .demo-card-wide.mdl-card {
     width: 512px;
