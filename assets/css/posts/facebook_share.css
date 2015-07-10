@@ -1,5 +1,5 @@
-@import  url('https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css');
-@import  url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .demo-card-wide.mdl-card {
     width: 512px;
@@ -8,7 +8,7 @@
 .demo-card-wide > .mdl-card__title {
     color: #fff;
     height: 176px;
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/welcome_card_tuts.png') center;
+    background: url('https://3.bp.blogspot.com/-OUf4edYL6i4/VZVTD_iapRI/AAAAAAAAndc/yXER0FbugBo/s1600/KFC.Philippines.Chizza-2.jpg') center;
 }
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
