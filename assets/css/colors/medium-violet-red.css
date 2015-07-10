@@ -37,6 +37,9 @@ a:focus{
 .header .header-wrap .nav-container .mini-nav-button:hover span{
 	background-color: #c71585;
 }
+.header .header-wrap .nav-container .mini-nav-button.active span{
+	background-color: transparent;
+}
 .header .header-wrap .nav-container .mini-nav-button.active span:before,
 .header .header-wrap .nav-container .mini-nav-button:hover span:before,
 .header .header-wrap .nav-container .mini-nav-button.active span:after,
