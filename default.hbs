@@ -38,11 +38,13 @@
     <meta property="fb:admins" content="">
     {{/if}}    
     <meta name="google-site-verification" content="RDjtZZJILJs5gRD8ple1ygWjLZ-bZuOdZ2yiBZgoQuM"> {{! Change for Google Webmaster verification }}
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'> {{! Change google font here }}    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'> {{! Change google font here }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/magnific-popup.css"}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset "css/YTPlayer.css"}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />   
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/colors/darkcyan.css"}}" /> {{! Change color scheme here }}
     {{ghost_head}}
@@ -54,11 +56,11 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-35752941-1', 'auto');
-          ga('set', '&uid', 'UA-35752941');
-	  ga('require', 'linkid', 'linkid.js');
-	  ga('require', 'displayfeatures');
-	  ga('send', 'pageview');
+      ga('create', 'UA-35752941-1', 'auto');
+      ga('set', '&uid', 'UA-35752941');
+      ga('require', 'linkid', 'linkid.js');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
 	</script>
 </head>
 <body class="{{body_class}} {{block "customBodyClass"}}"
@@ -89,7 +91,7 @@
             + footer/two-columns
             + footer/three-columns
         }}
-        {{>footer/one-column}}  
+        {{>footer/one-column}}
     </div>
     {{ghost_foot}}
     {{! The main JavaScript file for Globin }}    

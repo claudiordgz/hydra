@@ -1317,7 +1317,9 @@ body[data-post-align="right"] .body-content .post .post-header.video-post .heade
 	border-color: #444;
 }
 .body-content .post.odd .post-header.has-background .header-wrap .line::before,
-.body-content .post.odd .post-header.has-background .header-wrap .line::after{
+.body-content .post.odd .post-header.has-background .header-wrap .line::after,
+.body-content .post.odd .post-header.video-post .header-wrap .line::before,
+.body-content .post.odd .post-header.video-post .header-wrap .line::after{
 	border-color: #fff;
 }
 .body-content .post .post-header .header-wrap .line.has-icon::before,
@@ -1355,7 +1357,11 @@ body[data-post-align="right"] .body-content .post .post-header .header-wrap .lin
 .body-content .post.odd .post-header .header-wrap .line.has-icon a{
 	border-color: #444;
 }
-.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a{
+.body-content .post .post-header .header-wrap .line.has-icon .tooltip{
+	font-size: 16px;
+}
+.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a,
+.body-content .post.odd .post-header.video-post .header-wrap .line.has-icon a{
 	border-color: #fff;
 }
 body[data-post-align="left"] .body-content .post .post-header .header-wrap .line.has-icon a{
@@ -1370,7 +1376,8 @@ body[data-post-align="right"] .body-content .post .post-header .header-wrap .lin
 	background-color: #444;
 }
 .body-content .post .post-header .header-wrap .line.has-icon a:hover,
-.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a:hover{
+.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a:hover,
+.body-content .post.odd .post-header.video-post .header-wrap .line.has-icon a:hover{
 	background-color: #fff;
 }
 .body-content .post .post-header .header-wrap .line.has-icon a::before{
@@ -1381,15 +1388,16 @@ body[data-post-align="right"] .body-content .post .post-header .header-wrap .lin
 	color: #fff;
 	display: inline-block;	
 	text-align: center;
-	margin-left: 2px;
+	margin-left: 1px;
 	vertical-align: top;
-	margin-top: 12px;
+	margin-top: 11px;
 }
 .body-content .post.odd .post-header .header-wrap .line.has-icon a::before{
 	color: #444;
 }
 .body-content .post .post-header.has-background .header-wrap .line.has-icon a::before,
-.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a::before{
+.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a::before,
+.body-content .post.odd .post-header.video-post .header-wrap .line.has-icon a::before{
 	color: #fff;
 }
 .body-content .post .post-header .header-wrap .line.has-icon a.image-popup::before{
@@ -1403,7 +1411,8 @@ body[data-post-align="right"] .body-content .post .post-header .header-wrap .lin
 	color: #fff;
 }
 .body-content .post .post-header .header-wrap .line.has-icon a:hover::before,
-.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a:hover::before{
+.body-content .post.odd .post-header.has-background .header-wrap .line.has-icon a:hover::before,
+.body-content .post.odd .post-header.video-post .header-wrap .line.has-icon a:hover::before{
 	color: #444;
 }
 
@@ -1733,6 +1742,9 @@ body[data-post-align="right"] .body-content .post .post-header .header-wrap .pos
 	display: block;
 	content: '';
 	background-color: rgba(0, 0, 0, 0.2);
+}
+.body-content .post .post-header.video-post .video .mb_YTPBar{
+	display: none !important;
 }
 body[data-post-align="right"] .body-content .post .post-header.video-post .header-wrap .line::after {
 	right: 40px;
@@ -2219,6 +2231,7 @@ body[data-post-align="right"].post-template .body-content .post .post-content bl
 .post-template .body-content .post .post-content ul,
 .post-template .body-content .post .post-content ol{
 	margin-left: 20px;
+	padding-left: 0;
 }
 .post-template .body-content .post .post-content ul ul,
 .post-template .body-content .post .post-content ol ul {   
@@ -3134,7 +3147,7 @@ a img.aligncenter {
    7. Third Party Elements - Embeds from other services
    ========================================================================== */
 code, pre {
-	font-family: 'Open Sans', sans-serif;	
+	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	font-size: 13px;
 }
@@ -3174,8 +3187,8 @@ pre.line-numbers span{
 	line-height: 35px;
 	font-weight: normal;
 }
-pre.line-numbers > code{	
-	
+pre.line-numbers > code{
+
 }
 pre.line-numbers > code span {
 	font-size: 13px;

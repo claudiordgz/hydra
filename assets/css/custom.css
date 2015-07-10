@@ -1,0 +1,15 @@
+.myresponsivead { width: 320px; height: 100px; }
+/* Larger than mobile */
+@media (min-width: 400px) { .myresponsivead {width: 336px; height: 280px;} }
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) { .myresponsivead {width: 468px; height: 60px;} }
+
+/* Larger than tablet */
+@media (min-width: 750px) { .myresponsivead {width: 728px; height: 90px;} }
+
+/* Larger than desktop */
+@media (min-width: 1000px) { .myresponsivead {width: 970px; height: 90px;} }
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) { .myresponsivead {width: 970px; height: 90px;} }
