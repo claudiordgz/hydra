@@ -1034,16 +1034,15 @@ var sfApp={
         var scrollbarHeight = winHeight / $(document).height() * winHeight;
         var progress = $(window).scrollTop() / ($(document).height() - winHeight);
         var distance = progress * (winHeight - scrollbarHeight) + scrollbarHeight / 2 - $timeToReadNofify.height() / 2;
-        if($(window).scrollTop()<$('.post-footer').offset().top){
+        var allMightyHeight = parseFloat(document.body.clientHeight);
+        if(!$(window).scrollTop() < (allMightyHeight - allMightyHeight * 0.185)){
             if($(window).width()>979){
-                $shareBox.fadeOut(100);    
-            }            
-        }
-        else{
-            $timeToReadNofify.fadeOut(100);            
+                $shareBox.fadeOut(100);
+                $shareBox.css('top', distance-250).fadeIn(100);
+            }
+        } else {
             if($(window).width()>979){
-                var yOffset = parseFloat(document.body.clientHeight) * 0.10;
-                $shareBox.css('top', distance-yOffset).fadeIn(100);
+                $shareBox.fadeOut(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
