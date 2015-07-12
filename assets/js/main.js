@@ -1042,7 +1042,8 @@ var sfApp={
         else{
             $timeToReadNofify.fadeOut(100);            
             if($(window).width()>979){
-                $shareBox.css('top', distance-500).fadeIn(100);
+                var yOffset = parseFloat(document.body.clientHeight) * 0.06;
+                $shareBox.css('top', distance-yOffset).fadeIn(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
