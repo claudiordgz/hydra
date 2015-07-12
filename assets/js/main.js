@@ -1038,16 +1038,12 @@ var sfApp={
         var remainTime = Math.ceil(totalTime - (totalTime * progress));       
         var notifyStr='';        
         if($(window).scrollTop()<$('.post-footer').offset().top){
-            if(remainTime > 1) {
-                notifyStr = remainTime + ' minutes left';
-            }
-            else if(progress >= 1) {
+            if(progress <= 2) {
                 notifyStr = 'Thanks for reading';
             }
-            else if (remainTime <= 1) {
-                notifyStr = 'Less than a minute';
+            if(notifyStr) {
+                $timeToReadNofify.css('top', distance).text(notifyStr).fadeIn(100);
             }
-            $timeToReadNofify.css('top', distance).text(notifyStr).fadeIn(100);            
             if($(window).width()>979){
                 $shareBox.fadeOut(100);    
             }            
@@ -1055,7 +1051,7 @@ var sfApp={
         else{
             $timeToReadNofify.fadeOut(100);            
             if($(window).width()>979){
-                $shareBox.css('top', distance-75).fadeIn(100);
+                $shareBox.css('top', distance-125).fadeIn(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
