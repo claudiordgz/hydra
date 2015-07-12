@@ -1039,7 +1039,7 @@ var sfApp={
         var notifyStr='';
         var allMightyHeight = parseFloat(document.body.clientHeight);
         if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.18)) ||
-            $(window).scrollTop() < ($('.post-footer').offset().top - 250)){
+            $(window).scrollTop() < ($('.post-footer').offset().top + 250)){
             if($(window).width()>979){
                 $shareBox.fadeOut(100);
             }
