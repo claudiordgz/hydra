@@ -1041,7 +1041,7 @@ var sfApp={
             if(progress <= 2) {
                 notifyStr = 'Thanks for reading';
             }
-            if(notifyStr) {
+            if(notifyStr !== '') {
                 $timeToReadNofify.css('top', distance).text(notifyStr).fadeIn(100);
             }
             if($(window).width()>979){
@@ -1051,7 +1051,7 @@ var sfApp={
         else{
             $timeToReadNofify.fadeOut(100);            
             if($(window).width()>979){
-                $shareBox.css('top', distance-125).fadeIn(100);
+                $shareBox.css('top', distance-250).fadeIn(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
