@@ -58,6 +58,7 @@ html, body {
     flex-grow: 1;
     padding: 0;
     color: inherit;
+    font-size: 18px;
     width: calc(100% - 80px);
 }
 .mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
@@ -205,6 +206,13 @@ html, body {
     background-image: url('https://farm1.staticflickr.com/520/19369967005_0dc811c9a0.jpg');
     background-position: center;
 }
+
+.demo-card-wide > .mdl-card__title_two {
+    color: #fff;
+    height: 176px;
+    background-position: center;
+}
+
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
 }
