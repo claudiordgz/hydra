@@ -1030,20 +1030,11 @@ var sfApp={
             var time=Math.round($postContent.text().split(' ').length/200);
             $postContent.data('time-to-read',time);            
         }        
-        var totalTime=$postContent.data('time-to-read');
-        var winHeight=$(window).height();        
+        var winHeight=$(window).height();
         var scrollbarHeight = winHeight / $(document).height() * winHeight;
         var progress = $(window).scrollTop() / ($(document).height() - winHeight);
         var distance = progress * (winHeight - scrollbarHeight) + scrollbarHeight / 2 - $timeToReadNofify.height() / 2;
-        var remainTime = Math.ceil(totalTime - (totalTime * progress));       
-        var notifyStr='';        
         if($(window).scrollTop()<$('.post-footer').offset().top){
-            if(progress <= 2) {
-                notifyStr = 'Thanks for reading';
-            }
-            if(notifyStr !== '') {
-                $timeToReadNofify.css('top', distance).text(notifyStr).fadeIn(100);
-            }
             if($(window).width()>979){
                 $shareBox.fadeOut(100);    
             }            
@@ -1051,7 +1042,7 @@ var sfApp={
         else{
             $timeToReadNofify.fadeOut(100);            
             if($(window).width()>979){
-                $shareBox.css('top', distance-250).fadeIn(100);
+                $shareBox.css('top', distance-500).fadeIn(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
