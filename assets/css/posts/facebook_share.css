@@ -229,8 +229,3 @@ html, body {
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
 }
-body {
-    padding: 20px 0 0;
-    background: #fafafa;
-    position: relative;
-}
