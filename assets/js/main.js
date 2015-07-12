@@ -1037,26 +1037,32 @@ var sfApp={
         var distance = progress * (winHeight - scrollbarHeight) + scrollbarHeight / 2 - $timeToReadNofify.height() / 2;
         var remainTime = Math.ceil(totalTime - (totalTime * progress));
         var notifyStr='';
-        var allMightyHeight = parseFloat(document.body.clientHeight);
-        var otherPos = $('.post-footer').offset().top;
-        var disqusHeight = $('#dsq-1').height();
-        if ( disqusHeight > 0 ) {
-            otherPos = otherPos - disqusHeight;
-        } else {
-            otherPos = otherPos - 1000;
-        }
-        if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.05)) ||
-            $(window).scrollTop() < otherPos) {
-            if($(window).width()>979){
-                $shareBox.fadeOut(100);
+        var editable = true; // set a flag
+        var inter = setInterval(function() {
+        // Initially Disqus renders this div with the height of 0px prior to the comments being loaded. So run a check to see if the comments have been loaded yet.
+            var disqusHeight = $('#dsq-1').height();
+            if ( disqusHeight > 0 ) {
+                if (editable) { // To make sure that the changes you want to make only happen once check to see if the flag has been changed, if not run the changes and update the flag.
+                    var allMightyHeight = parseFloat(document.body.clientHeight);
+                    var otherPos = $('.post-footer').offset().top;
+                    if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.05)) ||
+                        $(window).scrollTop() < otherPos) {
+                        if($(window).width()>979){
+                            $shareBox.fadeOut(100);
+                        }
+                    }
+                    else{
+                        $timeToReadNofify.fadeOut(100);
+                        if($(window).width()>979){
+                            $shareBox.css('top', distance-125).fadeIn(100);
+                        }
+                    }
+                    clearInterval(inter);
+                }
             }
-        }
-        else{
-            $timeToReadNofify.fadeOut(100);
-            if($(window).width()>979){
-                $shareBox.css('top', distance-125).fadeIn(100);
-            }
-        }
+        }, 100);
+
+
         if (sfApp.scrollTimer !== null) {
             clearTimeout(sfApp.scrollTimer);
         }
