@@ -1038,7 +1038,11 @@ var sfApp={
         var remainTime = Math.ceil(totalTime - (totalTime * progress));
         var notifyStr='';
         var allMightyHeight = parseFloat(document.body.clientHeight);
-        var otherPos = $('.post-footer').offset().top - 500;
+        var otherPos = $('.post-footer').offset().top;
+        var disqusHeight = $('#dsq-1').height();
+        if ( disqusHeight > 0 ) {
+            otherPos = otherPos - disqusHeight;
+        }
         if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.18)) ||
             $(window).scrollTop() < otherPos){
             if($(window).width()>979){
