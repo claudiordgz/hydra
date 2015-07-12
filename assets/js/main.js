@@ -1042,6 +1042,8 @@ var sfApp={
         var disqusHeight = $('#dsq-1').height();
         if ( disqusHeight > 0 ) {
             otherPos = otherPos - disqusHeight;
+        } else {
+            otherPos = otherPos - 1000;
         }
         if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.18)) ||
             $(window).scrollTop() < otherPos){
