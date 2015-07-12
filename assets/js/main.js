@@ -1030,19 +1030,23 @@ var sfApp={
             var time=Math.round($postContent.text().split(' ').length/200);
             $postContent.data('time-to-read',time);            
         }        
+        var totalTime=$postContent.data('time-to-read');
         var winHeight=$(window).height();
         var scrollbarHeight = winHeight / $(document).height() * winHeight;
         var progress = $(window).scrollTop() / ($(document).height() - winHeight);
         var distance = progress * (winHeight - scrollbarHeight) + scrollbarHeight / 2 - $timeToReadNofify.height() / 2;
+        var remainTime = Math.ceil(totalTime - (totalTime * progress));
+        var notifyStr='';
         var allMightyHeight = parseFloat(document.body.clientHeight);
-        if(!$(window).scrollTop() < (allMightyHeight - allMightyHeight * 0.185)){
+        if($(window).scrollTop() < (allMightyHeight - allMightyHeight * 0.5)){
             if($(window).width()>979){
                 $shareBox.fadeOut(100);
-                $shareBox.css('top', distance-250).fadeIn(100);
             }
-        } else {
+        }
+        else{
+            $timeToReadNofify.fadeOut(100);
             if($(window).width()>979){
-                $shareBox.fadeOut(100);
+                $shareBox.css('top', distance-125).fadeIn(100);
             }
         }
         if (sfApp.scrollTimer !== null) {
