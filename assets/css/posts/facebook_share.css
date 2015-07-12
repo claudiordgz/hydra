@@ -205,12 +205,22 @@ html, body {
     height: 176px;
     background-image: url('https://farm1.staticflickr.com/520/19369967005_0dc811c9a0.jpg');
     background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .demo-card-wide > .mdl-card__title_two {
     color: #fff;
     height: 176px;
     background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .demo-card-wide > .mdl-card__menu {
