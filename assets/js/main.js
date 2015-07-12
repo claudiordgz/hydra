@@ -1045,7 +1045,7 @@ var sfApp={
         } else {
             otherPos = otherPos - 1000;
         }
-        if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.18)) ||
+        if($(window).scrollTop() < (allMightyHeight - (allMightyHeight * 0.25)) ||
             $(window).scrollTop() < otherPos){
             if($(window).width()>979){
                 $shareBox.fadeOut(100);
