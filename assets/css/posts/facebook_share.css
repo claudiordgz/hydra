@@ -58,7 +58,6 @@ html, body {
     flex-grow: 1;
     padding: 0;
     color: inherit;
-    font-size: 18px !important;
     width: calc(100% - 80px);
 }
 .mdl-demo.mdl-demo .mdl-card__supporting-text h4 {
@@ -221,6 +220,10 @@ html, body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.demo-card-wide > .mdl-card__supporting-text {
+    font-size: 18px !important;
 }
 
 .demo-card-wide > .mdl-card__menu {
