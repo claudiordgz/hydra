@@ -40,9 +40,6 @@
     <meta name="google-site-verification" content="RDjtZZJlLJs5gRD8ple1ygWjLZ-bZuOdZ2yiBZgoQuM" /> {{! Change for Google Webmaster verification }}
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'> {{! Change google font here }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/magnific-popup.min.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/YTPlayer.css"}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/colors/corporate-blue.min.css"}}" /> {{! Change color scheme here }}
     {{ghost_head}}
@@ -92,7 +89,25 @@
         {{>footer/one-column}}
     </div>
     {{ghost_foot}}
-    {{! The main JavaScript file for Globin }}    
+    {{! The main JavaScript file for Globin }}
+    <script>
+        var cb = function() {
+            var links = ["{{asset "css/font-awesome.min.css"}}",
+                "{{asset "css/magnific-popup.min.css"}}",
+                "{{asset "css/YTPlayer.css"}}"];
+            for(var i=0; i != links.length; ++i) {
+                var l = document.createElement('link');
+                l.rel = 'stylesheet';
+                l.href = links[i];
+                var h = document.getElementsByTagName('head')[0];
+                h.parentNode.insertBefore(l, h);
+            }
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
     <script async type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.mb.YTPlayer.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/sdk.js"}}"></script>
