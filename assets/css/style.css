@@ -2161,9 +2161,9 @@ POST DETAIL TEMPLATE
 }
 .post-template .body-content .post .post-content{
 	display: block;
-	padding: 50px 40px 20px 40px;
+	padding: 30px 25px 20px 25px;
 	margin: 0 auto;
-	max-width: 900px;
+	max-width: 65%;
 	text-align: left;
 }
 body[data-post-align="right"].post-template .body-content .post .post-content{
@@ -2297,12 +2297,15 @@ body[data-post-align="right"].post-template .body-content .post .post-content .p
 	text-align: right;
 }
 .post-template .body-content .post .post-content .post-footer .post-author .post-author-content .author-info{
+	display: none;
 	overflow: hidden;
 }
 .post-template .body-content .post .post-content .post-footer .post-author .post-author-content .author-info span{
+	display: none;
 	margin-right: 10px;
 }
 .post-template .body-content .post .post-content .post-footer .post-author .post-author-content p{
+	display: none;
 	margin-bottom: 0;
 }
 body[data-post-align="right"].post-template .body-content .post .post-content .post-footer .post-author .post-author-content p{
