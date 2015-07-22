@@ -2256,11 +2256,12 @@ body[data-post-align="right"].post-template .body-content .post .post-content bl
     border: 1px solid #444;
 	padding:5px 15px;
 }
-.post-template .body-content .post .post-content .post-footer{		
-	padding: 20px;
+.post-template .body-content .post .post-content .post-footer{
+	padding: 10px;
+	min-height: 75px;
 	text-align: left;
 	background-color: #EDF1F4;
-	margin-bottom: 40px;	
+	margin-bottom: 15px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -2276,8 +2277,8 @@ body[data-post-align="right"].post-template .body-content .post .post-content .p
 	margin-right: 0;
 }
 .post-template .body-content .post .post-content .post-footer .post-author .avatar img {
-	max-width: 70px;	
-	padding: 0px;	
+	max-width: 50px;
+	padding: 0;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
