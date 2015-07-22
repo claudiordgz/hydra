@@ -92,11 +92,11 @@
     {{! The main JavaScript file for Globin }}
     <script>
         var cb = function() {
-            var links = ["{{asset "css/font-awesome.min.css"}}",
+            var links = ["{{asset "css/bootstrap.min.css"}}",
+                "{{asset "css/font-awesome.min.css"}}",
                 "http://fonts.googleapis.com/css?family=Droid+Sans:400,700",
                 "{{asset "css/magnific-popup.min.css"}}",
-                "{{asset "css/YTPlayer.css"}}",
-                "{{asset "css/bootstrap.min.css"}}"];
+                "{{asset "css/YTPlayer.css"}}"];
             for(var i=0; i != links.length; ++i) {
                 var l = document.createElement('link');
                 l.rel = 'stylesheet';
