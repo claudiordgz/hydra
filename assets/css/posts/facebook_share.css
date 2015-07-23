@@ -229,3 +229,7 @@ html, body {
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
 }
+
+blockquote:before, blockquote:after {
+    content: '';
+}
