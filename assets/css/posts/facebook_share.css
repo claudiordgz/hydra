@@ -232,4 +232,5 @@ html, body {
 
 blockquote:before, blockquote:after {
     content: '';
+    margin: 0;
 }
