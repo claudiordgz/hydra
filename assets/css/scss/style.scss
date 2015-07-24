@@ -4540,3 +4540,10 @@ a {
     vertical-align: middle;
   }
 }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    margin: 0;
+  }
+}
