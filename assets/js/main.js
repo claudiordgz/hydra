@@ -1360,6 +1360,7 @@ var sfApp={
                     var alt=$(this).attr('alt');
                     $(this).addClass('img-responsive');
                     $(this).addClass(alt);
+                    if(!alt) { return; }
                     if(alt.indexOf('no-responsive')>=0){
                         $(this).removeClass('img-responsive');
                     }

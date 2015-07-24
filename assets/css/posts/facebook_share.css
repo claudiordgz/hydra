@@ -1,12 +1,6 @@
-@import url('http://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 @import url('https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-html, body {
-    font-family: 'Roboto', 'Helvetica', sans-serif;
-    margin: 0;
-    padding: 0;
-}
 .mdl-demo .mdl-layout__header-row {
     padding-left: 40px;
 }
@@ -233,4 +227,23 @@ html, body {
 blockquote:before, blockquote:after {
     content: '';
     margin: 0;
+}
+
+.modal-dialog {
+    width: 100%;
+    max-width: 70%;
+}
+
+.modal-content {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .modal-dialog {
+        width: 100%;
+        max-width: 90%;
+    }
+    .modal-content {
+        width: 100%;
+    }
 }
