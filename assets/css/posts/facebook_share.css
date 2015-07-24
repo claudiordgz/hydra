@@ -190,9 +190,17 @@
 }
 
 .demo-card-wide.mdl-card {
-    width: 512px;
+    width: 80%;
+    max-width: 900px;
     margin: 0 auto;
 }
+
+.demo-card-wide.mdl-card-small {
+    max-width: 512px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .demo-card-wide > .mdl-card__title {
     color: #fff;
     height: 176px;
