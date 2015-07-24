@@ -2887,17 +2887,15 @@ a img.aligncenter {
   width: 320px;
   height: 100px; }
 
-@media only screen and (max-width: 633px) {
-  .adslot_1 {
-    width: 468px;
-    height: 60px; }
-  #zergnet-widget-32930 {
-    display: none; } }
+#zergnet-widget-32875 {
+  display: none; }
 
 @media only screen and (min-width: 1170px) {
   .adslot_1 {
     width: 728px;
     height: 90px; }
+  #zergnet-widget-32875 {
+    display: none; }
   #site-intro.left-style .intro-wrap .intro-text, #site-intro.right-style .intro-wrap .intro-text {
     padding-left: 0;
     padding-right: 0; }
@@ -2906,10 +2904,7 @@ a img.aligncenter {
     padding-right: 40px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-  .adslot_1 {
-    width: 728px;
-    height: 90px; }
-  #zergnet-widget-32930 {
+  #zergnet-widget-32875 {
     display: none; }
   .header.header-standard .header-wrap .nav-container {
     position: relative; }
@@ -3012,8 +3007,12 @@ a img.aligncenter {
 
 @media only screen and (max-width: 767px) {
   .adslot_1 {
-    width: 728px;
-    height: 90px; }
+    width: 468px;
+    height: 60px; }
+  #zergnet-widget-32930 {
+    display: none; }
+  #zergnet-widget-32875 {
+    display: inline; }
   *, body {
     font-size: 16px;
     line-height: 30px; }
@@ -3209,6 +3208,8 @@ a img.aligncenter {
     height: 100px; }
   #zergnet-widget-32930 {
     display: none; }
+  #zergnet-widget-32875 {
+    display: inline; }
   *, body {
     font-size: 16px;
     line-height: 30px; }
@@ -3357,10 +3358,12 @@ a img.aligncenter {
 
 @media only screen and (max-width: 360px) {
   .adslot_1 {
-    width: 320px;
-    height: 100px; }
+    width: 234px;
+    height: 60px; }
   #zergnet-widget-32930 {
     display: none; }
+  #zergnet-widget-32875 {
+    display: inline; }
   #site-intro .intro-wrap .intro-text .author-avatar {
     width: 80px;
     height: 80px; }
@@ -3392,6 +3395,10 @@ a img.aligncenter {
 @media only screen and (max-height: 480px) {
   .adslot_1 {
     display: none; }
+  #zergnet-widget-32930 {
+    display: none; }
+  #zergnet-widget-32875 {
+    display: inline; }
   .header {
     padding: 15px 20px 15px 20px; }
   #site-intro.left-style .intro-wrap, #site-intro.right-style .intro-wrap {
