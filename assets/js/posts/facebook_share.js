@@ -33,6 +33,7 @@ function feedDialog(id, caption, picture) {
             } else if(/mdl-card__title/.test(childNode.className)) {
                 title = childNode.innerText;
                 pic = !picture ? getStyle(childNode, 'background-image') : picture;
+                pic = pic.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
             }
         }
     }
