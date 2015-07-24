@@ -1,5 +1,4 @@
 @import url('https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css');
-
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 .mdl-demo {
@@ -245,13 +244,15 @@
 
 .demo-card-wide > {
   .mdl-card__title {
-    @extend .defaultTitleConfiguration
+    @extend .defaultTitleConfiguration;
   }
   .mdl-card__title_two {
-    @extend .defaultTitleTwoConfiguration
+    @extend .defaultTitleTwoConfiguration;
+    width: 100%;
   }
   .mdl-card__supporting-text {
     font-size: 16px !important;
+    width: 100%;
   }
   .mdl-card__menu {
     color: #fff;
@@ -260,10 +261,10 @@
 
 .demo-card-wide-small > {
   .mdl-card__title {
-    @extend .defaultTitleConfiguration
+    @extend .defaultTitleConfiguration;
   }
   .mdl-card__title_two {
-    @extend .defaultTitleTwoConfiguration
+    @extend .defaultTitleTwoConfiguration;
   }
   .mdl-card__supporting-text {
     font-size: 16px !important;
