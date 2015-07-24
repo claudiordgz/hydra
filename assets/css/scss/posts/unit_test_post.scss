@@ -1,0 +1,26 @@
+@import 'common';
+
+.half-page-card.mdl-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.half-page-card > {
+
+  .mdl-card__title {
+    background: center url('http://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437673582/yuno_qdqyi8.jpg');
+    color: #B6B6B6;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    @extend .defaultTitleConfiguration;
+  }
+  .mdl-card__title_two {
+    @extend .defaultTitleTwoConfiguration;
+  }
+  .mdl-card__supporting-text {
+    font-size: 16px !important;
+  }
+  .mdl-card__menu {
+    color: #fff;
+  }
+}
