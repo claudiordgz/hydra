@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en);
 .bodyProperties, *, body {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #444;
   font-size: 18px;
   font-weight: 400;
@@ -19,7 +19,7 @@ pre, code, pre code {
   line-height: 1.6em; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   line-height: 1.5; }
 

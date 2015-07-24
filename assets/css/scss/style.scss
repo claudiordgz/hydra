@@ -1,15 +1,15 @@
 // Google Fonts
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en);
 
 $main-color: #5676a5;
 
 // Font Variables
-$roboto-slab: 'Roboto Slab', serif;
+$roboto: "Roboto","Helvetica","Arial",sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 $general-font-color: #444;
 
 .bodyProperties {
-  font-family: $roboto-slab;
+  font-family: $roboto;
   color: $general-font-color;
   font-size: 18px;
   font-weight: 400;
@@ -41,7 +41,7 @@ pre, code, pre code {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $roboto-slab;
+  font-family: $roboto;
   font-weight: 700;
   line-height: 1.5;
 }
