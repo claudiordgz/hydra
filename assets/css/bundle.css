@@ -2887,6 +2887,10 @@ a img.aligncenter {
   width: 320px;
   height: 100px; }
 
+.adslot_inside_card {
+  width: 100%;
+  height: 60px; }
+
 #zergnet-widget-32875 {
   display: none; }
 
