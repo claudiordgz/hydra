@@ -2887,6 +2887,13 @@ a img.aligncenter {
   width: 320px;
   height: 100px; }
 
+@media only screen and (max-width: 599px) {
+  #zergnet-widget-32930 {
+    display: none; }
+  .adslot_1 {
+    width: 468px;
+    height: 60px; } }
+
 @media only screen and (min-width: 1170px) {
   .adslot_1 {
     width: 728px;
@@ -3198,6 +3205,8 @@ a img.aligncenter {
   .adslot_1 {
     width: 320px;
     height: 100px; }
+  #zergnet-widget-32930 {
+    display: none; }
   *, body {
     font-size: 16px;
     line-height: 30px; }
@@ -3348,6 +3357,8 @@ a img.aligncenter {
   .adslot_1 {
     width: 320px;
     height: 100px; }
+  #zergnet-widget-32930 {
+    display: none; }
   #site-intro .intro-wrap .intro-text .author-avatar {
     width: 80px;
     height: 80px; }
@@ -3614,3 +3625,11 @@ a {
 
 #gmap div.gmnoprint[title="i-am-here"] {
   background-color: #5676a5; }
+
+.center-unknown {
+  display: table;
+  width: 100%; }
+  .center-unknown .el {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
