@@ -2887,12 +2887,12 @@ a img.aligncenter {
   width: 320px;
   height: 100px; }
 
-@media only screen and (max-width: 599px) {
-  #zergnet-widget-32930 {
-    display: none; }
+@media only screen and (max-width: 633px) {
   .adslot_1 {
     width: 468px;
-    height: 60px; } }
+    height: 60px; }
+  #zergnet-widget-32930 {
+    display: none; } }
 
 @media only screen and (min-width: 1170px) {
   .adslot_1 {
@@ -2909,6 +2909,8 @@ a img.aligncenter {
   .adslot_1 {
     width: 728px;
     height: 90px; }
+  #zergnet-widget-32930 {
+    display: none; }
   .header.header-standard .header-wrap .nav-container {
     position: relative; }
     .header.header-standard .header-wrap .nav-container .mini-nav-button {

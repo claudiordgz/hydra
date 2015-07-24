@@ -3414,13 +3414,13 @@ a img {
   height: 100px;
 }
 
-@media only screen and (max-width: 599px) {
-  #zergnet-widget-32930 {
-    display: none;
-  }
+@media only screen and (max-width: 633px) {
   .adslot_1 {
     width: 468px;
     height: 60px;
+  }
+  #zergnet-widget-32930 {
+    display: none;
   }
 }
 
@@ -3447,6 +3447,9 @@ a img {
   .adslot_1 {
     width: 728px;
     height: 90px;
+  }
+  #zergnet-widget-32930 {
+    display: none;
   }
   .header {
     &.header-standard {
