@@ -90,7 +90,9 @@
     {{ghost_foot}}
     {{! The main JavaScript file for Globin }}
     <script>
-        var links = ["{{asset "css/bootstrap.min.css"}}","{{asset "css/prism.min.css"}}","{{asset "css/font-awesome.min.css"}}","{{asset "css/magnific-popup.min.css"}}", "{{asset "css/YTPlayer.css"}}"];
+        var links = ["{{asset "css/bootstrap.min.css"}}","https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css",
+            "https://fonts.googleapis.com/icon?family=Material+Icons", "{{asset "css/prism.min.css"}}","{{asset "css/font-awesome.min.css"}}",
+            "{{asset "css/magnific-popup.min.css"}}", "{{asset "css/YTPlayer.css"}}"];
         var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
     </script>
     <script type="text/javascript" src="{{asset "js/prism-debug.js"}}"></script>
