@@ -38,7 +38,7 @@
     <meta property="fb:admins" content="">
     {{/if}}
     <meta name="google-site-verification" content="RDjtZZJlLJs5gRD8ple1ygWjLZ-bZuOdZ2yiBZgoQuM" /> {{! Change for Google Webmaster verification }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/bundle.min.css"}}">
+    {{>css/bundle}}
     {{ghost_head}}
     <script type="text/javascript"> var sfThemeOptions = { global : {   rootUrl : '{{@blog.url}}' } }</script>
     {{! Place your Google Analytic here }}
@@ -68,32 +68,20 @@
     </div>
     <![endif]-->
     <div class="body-wrap">
-        {{! Change your header type here, include:
-            + header/standard
-            + header/full-screen
-            + header/full-screen-center-logo
-            + header/mini
-        }}
         {{>header/standard}}
         <div class="main-wrap">
             {{{body}}}
         </div>
-        {{! Change footer style here, include:
-            + footer/one-column
-            + footer/two-columns
-            + footer/three-columns
-        }}
-        {{>footer/one-column}}
     </div>
     {{ghost_foot}}
-    {{! The main JavaScript file for Globin }}
     <script>
-        var links = ["{{asset "css/bootstrap.min.css"}}","https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css",
-            "https://fonts.googleapis.com/icon?family=Material+Icons", "{{asset "css/prism.min.css"}}","{{asset "css/font-awesome.min.css"}}",
-            "{{asset "css/magnific-popup.min.css"}}", "{{asset "css/YTPlayer.css"}}"];
+        var links = ["{{asset "css/bootstrap.min.css"}}", "https://fonts.googleapis.com/icon?family=Material+Icons",
+            "{{asset "css/prism.min.css"}}","{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}",
+            "{{asset "css/YTPlayer.css"}}"];
         var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
     </script>
-    <script type="text/javascript" src="{{asset "js/prism-debug.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script async type="text/javascript" src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
     <script async type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.mb.YTPlayer.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/sdk.js"}}"></script>
@@ -102,7 +90,6 @@
     <script async type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jqBootstrapValidation.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/imagesloaded.pkgd.min.js"}}"></script>
-
     <script async type="text/javascript" src="{{asset "js/moment.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/pace.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.placeholder.min.js"}}"></script>

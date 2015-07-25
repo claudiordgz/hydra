@@ -8,14 +8,14 @@
 		<div class="logo-container">
 			{{#if @blog.logo}}
 				<a class="logo" href="{{@blog.url}}">
-					<img src="{{@blog.logo}}" alt="{{@blog.title}}" title="{{@blog.title}}" 
+					<img src="{{@blog.logo}}" alt="{{@blog.title}}" title="{{@blog.title}}"
 					data-sticked-src=""{{!Put the image url for sticked if you want (it effect on header have data-sticky="true"). Note it need full path }}/>
 				</a>
 			{{else}}
 				<a class="logo text" href="{{@blog.url}}">{{@blog.title}}</a>
 			{{/if}}
 		</div>
-		<div class="addition-container">			
+		<div class="addition-container">
 			<a class="search-button" href="javascript:;">
 				<i class="fa fa-search"></i>
 			</a>
@@ -25,15 +25,15 @@
 				<span>
 					Navigation
 				</span>
-			</a>			
+			</a>
 			<ul class="nav standard-nav">
 				{{#if @blog.navigation}}
 					{{navigation}}
 				{{else}}
 					{{>menu-items}}
 				{{/if}}
-			</ul>							
-		</div>		
+			</ul>
+		</div>
 	</div>
 </div>
 <div class="search-container">
@@ -42,7 +42,7 @@
 			<div class="search-box">
 				<h3 class="search-label">Search</h3>
 				<input type="search" name="search-keyword" id="search-keyword" placeholder="Type and hit enter!"/>
-				<ul class="search-result">				
+				<ul class="search-result">
 				</ul>
 			</div>
 		</div>

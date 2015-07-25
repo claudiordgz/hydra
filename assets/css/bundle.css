@@ -406,7 +406,6 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   display: inline-block;
   width: 32px;
   height: 32px;
-  margin-top: 3px;
   text-align: center;
   vertical-align: middle;
   border: 2px solid #fff;
@@ -1997,10 +1996,19 @@ POST DETAIL TEMPLATE
 .post-template .body-content .post .post-content {
   display: block;
   padding: 30px 25px 20px 25px;
-  margin: 0 auto;
-  max-width: 80%;
+  margin: 0;
+  width: 100%;
   text-align: left;
   background-color: GhostWhite; }
+  @media screen and (max-width: 1024px) {
+    .post-template .body-content .post .post-content {
+      margin: 0;
+      max-width: 100%; } }
+  @media screen and (min-width: 1280px) {
+    .post-template .body-content .post .post-content {
+      width: 80%;
+      min-width: 1024px;
+      margin: 0 auto 0 0; } }
 
 body[data-post-align="right"].post-template .body-content .post .post-content {
   text-align: right; }
@@ -2504,7 +2512,7 @@ FOOTER
   background-color: #EDF1F4;
   padding: 40px 40px 30px 40px;
   position: relative;
-  z-index: 1; }
+  z-index: 2; }
   .site-footer .site-footer-wrap {
     margin: 0 auto;
     max-width: 1170px;
@@ -2921,8 +2929,7 @@ a img.aligncenter {
     position: relative; }
     .header.header-standard .header-wrap .nav-container .mini-nav-button {
       display: block;
-      margin-right: 10px;
-      margin-top: 7px; }
+      margin-right: 10px; }
     .header.header-standard .header-wrap .nav-container .standard-nav {
       position: absolute;
       width: 240px;
@@ -3663,3 +3670,17 @@ a {
 blockquote:before, blockquote:after {
   content: '';
   margin: 0; }
+
+.mdl-layout__container {
+  position: relative !important; }
+
+.mdl-layout__drawer > .mdl-layout-title {
+  padding-left: 20px;
+  font-size: 14px; }
+
+.mdl-navigation__link {
+  font-size: 16px; }
+
+.mdl-layout__drawer.fixed {
+  position: fixed;
+  top: 68px; }

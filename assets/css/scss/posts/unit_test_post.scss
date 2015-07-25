@@ -1,4 +1,6 @@
 @import 'common';
+@import '../properties';
+
 
 .half-page-card.mdl-card {
   width: 100%;
@@ -10,9 +12,11 @@
 
   .mdl-card__title {
     background: center url('http://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437673582/yuno_qdqyi8.jpg');
-    color: #B6B6B6;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    color: $main-color;
     @extend .defaultTitleConfiguration;
+    b {
+      background-color: rgba(255,255,255, 0.9);
+    }
   }
   .mdl-card__title_two {
     @extend .defaultTitleTwoConfiguration;
