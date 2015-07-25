@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         childNode = pageContent.children[i];
         if(childNode) {
             if(childNode.tagName == 'H2'){
-                var text = slugify(childNode.innerText);
+                var textToSlugify = childNode.innerText || childNode.innerHTML;
+                var text = slugify(textToSlugify);
                 var aTag = document.createElement('a');
                 aTag.setAttribute('name',text);
                 pageContent.insertBefore(aTag, childNode);
