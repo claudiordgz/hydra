@@ -9,14 +9,14 @@
 			{{else}}
 				{{#if author.cover}}
 					style="background-image: url({{author.cover}})"
-				{{else}} 
+				{{else}}
 					{{#if @blog.cover}}
 					style="background-image: url({{@blog.cover}})"
 					{{/if}}
 				{{/if}}
 			{{/if}}>
 			<div class="header-wrap">
-				<h2 class="post-title">Hello, I am {{author.name}}</h2>				
+				<h2 class="post-title">Hello, I am {{author.name}}</h2>
 				<div class="post-meta"><i class="fa fa-home"></i> <span>{{author.location}}</span> <i class="fa fa-globe"></i> <a href="{{author.website}}">{{author.website}}</a></div>
             	<div class="line"></div>
             	<div class="post-meta">{{author.bio}}</div>
@@ -24,7 +24,6 @@
 		</div>
 		<div class="post-content">
 			{{content}}
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- ResponsiveAd -->
             <ins class="adsbygoogle adslot_1"
                  style="display:inline-block;margin-left:auto;margin-right:auto;width: 100%;"
