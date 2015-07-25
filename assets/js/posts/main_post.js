@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var navigationTitle = document.getElementsByClassName('mdl-layout-title')[0];
     var className = 'mdl-layout__drawer';
     var drawer = document.getElementsByClassName(className)[0];
-    navigationTitle.innerText = postTitle.innerText;
+    if(navigationTitle.innerText) {
+        navigationTitle.innerText = postTitle.innerText;
+    } else if (navigationTitle.innerHTML) {
+        navigationTitle.innerHTML = postTitle.innerHTML;
+    }
     for (var i = 0, childNode; i <= pageContent.children.length; i ++) {
         childNode = pageContent.children[i];
         if(childNode) {
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 aTag.setAttribute('name',text);
                 pageContent.insertBefore(aTag, childNode);
                 var linkToTag = document.createElement('a');
-                linkToTag.innerHTML = childNode.innerText;
+                linkToTag.innerHTML = textToSlugify;
                 linkToTag.className = 'mdl-navigation__link';
                 linkToTag.href = '#' + text;
                 navigationLinks.appendChild(linkToTag);
