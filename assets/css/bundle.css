@@ -1,4 +1,5 @@
 @import url(/assets/css/Roboto.css);
+@import url(/assets/css/Lora.css);
 .bodyProperties, *, body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #444;
