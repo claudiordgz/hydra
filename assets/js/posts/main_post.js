@@ -57,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     addEvent(window, 'scroll', function(event) {
         var scrollY = document.body.scrollTop;
         if (scrollY >= 585) {
-            drawer.className += ' fixed';
+            if (!(/fixed/.test(drawer.className))) {
+                drawer.className += ' fixed';
+            }
         } else {
             drawer.className = className;
         }
