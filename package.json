@@ -26,7 +26,7 @@
     "build-ut-css": "npm run unit-test-post && npm run minify-unit-test-post",
 
     "build-css": "npm run build-theme-css && npm run build-fb-css && npm run build-ut-css",
-    "merge-css": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/material.deep_purple-pink.min.css assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '</style>' >> partials/css/bundle.hbs",
+    "merge-css": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/material.deep_purple-pink.min.css assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
     "deploy-css": "npm run build-css && npm run merge-css"
 
   }

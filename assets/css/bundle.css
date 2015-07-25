@@ -3684,3 +3684,9 @@ blockquote:before, blockquote:after {
 .mdl-layout__drawer.fixed {
   position: fixed;
   top: 68px; }
+
+.modal-dialog {
+  left: 100px; }
+  @media only screen and (max-width: 1024px) {
+    .modal-dialog {
+      left: 0; } }

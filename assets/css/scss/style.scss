@@ -4573,3 +4573,10 @@ blockquote {
     top: 68px;
   }
 }
+
+.modal-dialog {
+  left: 100px;
+  @media only screen and (max-width: 1024px){
+    left: 0;
+  }
+}
