@@ -97,12 +97,14 @@
     <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
     {{#if post}}
     {{#post}}
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
         <script type="text/javascript" src="{{asset "js/posts/main_post.js"}}"></script>
     {{/post}}
     {{/if}}
+    <script>
+        [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        });
+    </script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {{{block "customScript"}}}
 </body>
