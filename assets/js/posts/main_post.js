@@ -48,11 +48,7 @@ function loadScript(url, callback)
 }
 
 var adsLoaded = function() {
-    [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(adUnit){
-        adUnit.style.display = 'block';
-        adUnit.style.display = 'inline-block';
-        var i = 0;
-    });
+
 };
 
 
