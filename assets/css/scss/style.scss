@@ -4365,11 +4365,13 @@ blockquote {
   font-size: 16px;
 }
 
-.mdl-layout__drawer {
-  @include transparent-shades('light', #5676a5);
-  &.fixed {
-    position: fixed;
-    top: 68px;
+@media screen and (min-width: 1025px) {
+  .mdl-layout--fixed-drawer>.mdl-layout__drawer {
+    @include transparent-shades('light', #5676a5);
+    &.fixed {
+      position: fixed;
+      top: 68px;
+    }
   }
 }
 

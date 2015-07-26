@@ -1,4 +1,4 @@
-.transparent-background, .mdl-layout__drawer .light-90, .mdl-layout__drawer .light-80, .mdl-layout__drawer .light-70, .mdl-layout__drawer .light-60, .mdl-layout__drawer .light-50, .mdl-layout__drawer .light-40, .mdl-layout__drawer .light-30, .mdl-layout__drawer .light-20, .mdl-layout__drawer .light-10 {
+.transparent-background, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-90, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-80, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-70, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-60, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-50, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-40, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-30, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-20, .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-10 {
   background-color: transparent;
   zoom: 1; }
 
@@ -3515,45 +3515,37 @@ blockquote:before, blockquote:after {
 .mdl-navigation__link {
   font-size: 16px; }
 
-.mdl-layout__drawer .light-90 {
-  background-color: rgba(86, 118, 165, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E65676A5,endColorstr=#E65676A5); }
-
-.mdl-layout__drawer .light-80 {
-  background-color: rgba(86, 118, 165, 0.8);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC5676A5,endColorstr=#CC5676A5); }
-
-.mdl-layout__drawer .light-70 {
-  background-color: rgba(86, 118, 165, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B35676A5,endColorstr=#B35676A5); }
-
-.mdl-layout__drawer .light-60 {
-  background-color: rgba(86, 118, 165, 0.6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#995676A5,endColorstr=#995676A5); }
-
-.mdl-layout__drawer .light-50 {
-  background-color: rgba(86, 118, 165, 0.5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#805676A5,endColorstr=#805676A5); }
-
-.mdl-layout__drawer .light-40 {
-  background-color: rgba(86, 118, 165, 0.4);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#665676A5,endColorstr=#665676A5); }
-
-.mdl-layout__drawer .light-30 {
-  background-color: rgba(86, 118, 165, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D5676A5,endColorstr=#4D5676A5); }
-
-.mdl-layout__drawer .light-20 {
-  background-color: rgba(86, 118, 165, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#335676A5,endColorstr=#335676A5); }
-
-.mdl-layout__drawer .light-10 {
-  background-color: rgba(86, 118, 165, 0.1);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A5676A5,endColorstr=#1A5676A5); }
-
-.mdl-layout__drawer.fixed {
-  position: fixed;
-  top: 68px; }
+@media screen and (min-width: 1025px) {
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-90 {
+    background-color: rgba(86, 118, 165, 0.9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E65676A5,endColorstr=#E65676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-80 {
+    background-color: rgba(86, 118, 165, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC5676A5,endColorstr=#CC5676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-70 {
+    background-color: rgba(86, 118, 165, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B35676A5,endColorstr=#B35676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-60 {
+    background-color: rgba(86, 118, 165, 0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#995676A5,endColorstr=#995676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-50 {
+    background-color: rgba(86, 118, 165, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#805676A5,endColorstr=#805676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-40 {
+    background-color: rgba(86, 118, 165, 0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#665676A5,endColorstr=#665676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-30 {
+    background-color: rgba(86, 118, 165, 0.3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D5676A5,endColorstr=#4D5676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-20 {
+    background-color: rgba(86, 118, 165, 0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#335676A5,endColorstr=#335676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer .light-10 {
+    background-color: rgba(86, 118, 165, 0.1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1A5676A5,endColorstr=#1A5676A5); }
+  .mdl-layout--fixed-drawer > .mdl-layout__drawer.fixed {
+    position: fixed;
+    top: 68px; } }
 
 .modal-dialog {
   left: 100px; }
