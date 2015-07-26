@@ -3499,10 +3499,12 @@ blockquote:before, blockquote:after {
   position: relative !important; }
 
 .mdl-layout__drawer > .mdl-layout-title {
+  text-overflow: ellipsis;
   padding-left: 20px;
   font-size: 14px; }
 
 .mdl-navigation__link {
+  text-overflow: ellipsis;
   font-size: 16px; }
 
 .mdl-layout__drawer.fixed {
