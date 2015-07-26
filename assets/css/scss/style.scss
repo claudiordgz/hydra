@@ -4367,7 +4367,7 @@ blockquote {
 
 @media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer>.mdl-layout__drawer {
-    @include transparent-shades('light', #5676a5);
+    @include transparent(#5676a5, 0.75);
     &.fixed {
       position: fixed;
       top: 68px;
