@@ -4351,17 +4351,22 @@ blockquote {
 }
 
 .mdl-layout__drawer>.mdl-layout-title {
-  text-overflow:ellipsis;
+  width: 210px;
+  height: 64px;
+  text-overflow: ellipsis;
   padding-left: 20px;
   font-size: 14px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .mdl-navigation__link {
-  text-overflow:ellipsis;
   font-size: 16px;
 }
 
 .mdl-layout__drawer {
+  @include transparent-shades('light', #5676a5);
   &.fixed {
     position: fixed;
     top: 68px;

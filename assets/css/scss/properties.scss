@@ -2,3 +2,26 @@ $main-color: #5676a5;
 $roboto: "Roboto","Helvetica","Arial",sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 $general-font-color: #444;
+
+.transparent-background {
+  background-color: transparent;
+  zoom: 1;
+}
+
+// The mixin
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  @extend .transparent-background;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+}
+
+// Loop through opacities from 90 to 10 on an alpha scale
+@mixin transparent-shades($name, $color) {
+  @each $alpha in 90, 80, 70, 60, 50, 40, 30, 20, 10 {
+    .#{$name}-#{$alpha} {
+      @include transparent($color, $alpha / 100);
+    }
+  }
+}
