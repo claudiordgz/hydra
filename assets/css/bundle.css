@@ -660,7 +660,6 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   left: 0;
   width: 100%;
   background-color: #444;
-  background-color: rgba(0, 0, 0, 0.85);
   height: 100%;
   opacity: 0;
   z-index: 70;
@@ -744,7 +743,6 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   left: 0;
   right: 0;
   background-color: #444;
-  background-color: rgba(0, 0, 0, 0.85);
   height: 100%;
   opacity: 0;
   z-index: 70;
@@ -831,12 +829,11 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   -ms-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
   #site-intro.covered {
-    background-size: 100%;
+    background-size: cover;
     background-position: center center;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; }
+    -o-background-size: cover; }
     #site-intro.covered:after {
       position: absolute;
       background-color: #444;
@@ -975,8 +972,7 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
       left: 50%;
       cursor: pointer;
       transition: opacity 0.3s ease;
-      margin: 0 auto;
-      margin-left: -12.5px; }
+      margin: 0 auto 0 -12.5px; }
       #site-intro .more-detail .scrollDown .mouseBorder {
         display: block;
         height: 100%;
@@ -1426,12 +1422,11 @@ body[data-uppercase="true"] .body-content .post .post-header .header-wrap .post-
 
 .body-content .post .post-header.has-background {
   position: relative;
-  background-size: 100%;
+  background-size: cover;
   background-position: center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   z-index: 2; }
   .body-content .post .post-header.has-background:after {
     position: absolute;
@@ -1475,12 +1470,11 @@ body[data-uppercase="true"] .body-content .post .post-header .header-wrap .post-
 
 .body-content .post .post-header.video-post.mobile, .body-content .post .post-header.video-post.vimeo {
   position: relative;
-  background-size: 100%;
+  background-size: cover;
   background-position: center center;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   z-index: 2; }
 
 .body-content .post .post-header.video-post.video-post.mobile:after, .body-content .post .post-header.video-post.video-post.vimeo:after {
@@ -1984,14 +1978,12 @@ POST DETAIL TEMPLATE
   margin-bottom: 30px; }
   .post-template .body-content .post .post-content table thead td, .post-template .body-content .post .post-content table thead th {
     border: 1px solid #444;
-    font-weight: bold;
     font-weight: 700;
     text-transform: uppercase;
     background-color: #EAEDEE;
     padding: 10px 15px; }
   .post-template .body-content .post .post-content table tfoot td {
     border: 1px solid #444;
-    font-weight: bold;
     font-weight: 700;
     text-transform: uppercase;
     background-color: #EAEDEE;
@@ -2053,15 +2045,13 @@ POST DETAIL TEMPLATE
   position: relative;
   margin-top: 40px;
   padding: 50px 0;
-  background-size: 100%;
-  background-position: center center;
+  background: #fff center center;
+  background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   z-index: 2;
-  border-top: solid 2px #EDF1F4;
-  background-color: #fff; }
+  border-top: solid 2px #EDF1F4; }
   .post-template .next-post.image-post, .post-template .next-post.video-post {
     border-top: none; }
   .post-template .next-post.mask:after, .post-template .next-post.video-post:after {

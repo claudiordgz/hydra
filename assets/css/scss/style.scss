@@ -752,7 +752,6 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   left: 0;
   width: 100%;
   background-color: $general-font-color;
-  background-color: rgba(0, 0, 0, 0.85);
   height: 100%;
   opacity: 0;
   z-index: 70;
@@ -838,7 +837,6 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   left: 0;
   right: 0;
   background-color: $general-font-color;
-  background-color: rgba(0, 0, 0, 0.85);
   height: 100%;
   opacity: 0;
   z-index: 70;
@@ -928,12 +926,11 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
   background-color: $general-font-color;
   @include ease-in-out-transition(0.5s);
   &.covered {
-    background-size: 100%;
+    background-size: cover;
     background-position: center center;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
     &:after {
       position: absolute;
       background-color: $general-font-color;
@@ -1085,8 +1082,7 @@ body[data-uppercase="true"] .header .header-wrap .nav-container .standard-nav > 
       left: 50%;
       cursor: pointer;
       transition: opacity .3s ease;
-      margin: 0 auto;
-      margin-left: -12.5px;
+      margin: 0 auto 0 -12.5px;
       .mouseBorder {
         display: block;
         height: 100%;
@@ -1632,12 +1628,11 @@ body[data-uppercase="true"] .body-content .post .post-header .header-wrap .post-
   }
   .post-header.has-background {
     position: relative;
-    background-size: 100%;
+    background-size: cover;
     background-position: center center;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
     z-index: 2;
     &:after {
       position: absolute;
@@ -1686,12 +1681,11 @@ body[data-uppercase="true"] .body-content .post .post-header .header-wrap .post-
   .post-header.video-post {
     &.mobile, &.vimeo {
       position: relative;
-      background-size: 100%;
+      background-size: cover;
       background-position: center center;
       -moz-background-size: cover;
       -webkit-background-size: cover;
       -o-background-size: cover;
-      background-size: cover;
       z-index: 2;
     }
     &.video-post {
@@ -2298,7 +2292,6 @@ POST DETAIL TEMPLATE
     thead {
       td, th {
         border: 1px solid $general-font-color;
-        font-weight: bold;
         font-weight: 700;
         text-transform: uppercase;
         background-color: #EAEDEE;
@@ -2307,7 +2300,6 @@ POST DETAIL TEMPLATE
     }
     tfoot td {
       border: 1px solid $general-font-color;
-      font-weight: bold;
       font-weight: 700;
       text-transform: uppercase;
       background-color: #EAEDEE;
@@ -2384,15 +2376,13 @@ POST DETAIL TEMPLATE
     position: relative;
     margin-top: 40px;
     padding: 50px 0;
-    background-size: 100%;
-    background-position: center center;
+    background: #fff center center;
+    background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
     z-index: 2;
     border-top: solid 2px #EDF1F4;
-    background-color: #fff;
     &.image-post, &.video-post {
       border-top: none;
     }

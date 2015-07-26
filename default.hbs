@@ -94,14 +94,14 @@
     <script async type="text/javascript" src="{{asset "js/jquery.placeholder.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
-    {{#if post}}
+    {{#unless posts}}
         <script type="text/javascript" src="{{asset "js/posts/main_post.js"}}"></script>
-    {{/if}}
-    <script>
-        [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        });
-    </script>
+        <script>
+            [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            });
+        </script>
+    {{/unless}}
     {{{block "customScript"}}}
 </body>
 </html>
