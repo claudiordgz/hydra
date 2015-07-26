@@ -20,55 +20,7 @@
                 {{/if}}
 			</div>
 		</div>
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-            <div class="mdl-layout__drawer">
-                <span class="mdl-layout-title">Title</span>
-                <nav class="mdl-navigation">
-                </nav>
-            </div>
-            <div class="mdl-layout__content">
-                <div class="page-content">
-                    <div class="post-content">
-                        <div class="center-unknown">
-                            <div class="el">
-                                <!-- BlopTop -->
-                                <ins class="adsbygoogle adslot_1"
-                                     style="display:inline-block;margin: 0 auto 0 auto; width: 100%;"
-                                     data-ad-client="ca-pub-1525337072631150"
-                                     data-ad-slot="3858661425"
-                                     data-ad-format="auto"></ins>
-                            </div>
-                        </div>
-                        {{content}}
-                        <br/>
-                        <div class="center-unknown">
-                            <div class="el">
-                                <div id="zergnet-widget-32930"></div>
-                                <script language="javascript" type="text/javascript">
-                                    (function() {
-                                        var zergnet = document.createElement('script');
-                                        zergnet.type = 'text/javascript'; zergnet.async = true;
-                                        zergnet.src = 'http://www.zergnet.com/zerg.js?id=32930';
-                                        var znscr = document.getElementsByTagName('script')[0];
-                                        znscr.parentNode.insertBefore(zergnet, znscr);
-                                    })();
-                                </script>
-                                <div id="zergnet-widget-32875"></div>
-                                <script language="javascript" type="text/javascript">
-                                    (function() {
-                                        var zergnet = document.createElement('script');
-                                        zergnet.type = 'text/javascript'; zergnet.async = true;
-                                        zergnet.src = 'http://www.zergnet.com/zerg.js?id=32875';
-                                        var znscr = document.getElementsByTagName('script')[0];
-                                        znscr.parentNode.insertBefore(zergnet, znscr);
-                                    })();
-                                </script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{>content/main}}
 	</section>
 </main>
 {{/post}}

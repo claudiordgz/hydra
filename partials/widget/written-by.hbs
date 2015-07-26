@@ -1,0 +1,27 @@
+{{#author}}
+    <footer class="post-footer">
+        <div  itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+            {{#if image}}
+                <div class="avatar">
+                    <img class="img-reponsive" itemprop="image" src="{{image}}" alt="{{name}}" />
+                </div>
+            {{/if}}
+            <div class="post-author-content">
+                <h4 class="author-name">
+                    Written by <a href="{{url}}" itemprop="url" class="post-author-name"><span itemprop="name">{{name}}</span></a>
+                </h4>
+                <div class="author-info">
+                    {{#if location}}<i class="fa fa-home"></i> <span>{{location}}</span>{{/if}}
+                    {{#if website}}<i class="fa fa-globe"></i> <a href="{{website}}">{{website}}</a>{{/if}}
+                </div>
+                <p itemprop="description">
+                    {{#if bio}}
+                        {{bio}}
+                    {{else}}
+                        The author didnt add any Information to his profile yet
+                    {{/if}}
+                </p>
+            </div>
+        </div>
+    </footer>
+{{/author}}

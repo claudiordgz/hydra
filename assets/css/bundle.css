@@ -1,4 +1,4 @@
-.transparent-background, .mdl-layout--fixed-drawer > .mdl-layout__drawer {
+.transparent-background, .mdl-layout__drawer > .mdl-layout-title::after {
   background-color: transparent;
   zoom: 1; }
 
@@ -3510,15 +3510,44 @@ blockquote:before, blockquote:after {
   font-size: 14px;
   display: block;
   overflow: hidden;
-  white-space: nowrap; }
+  white-space: nowrap;
+  color: white; }
+  .mdl-layout__drawer > .mdl-layout-title::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 2px;
+    background-color: rgba(236, 236, 236, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCECECEC,endColorstr=#CCECECEC); }
 
-.mdl-navigation__link {
-  font-size: 16px; }
+.mdl-layout__drawer > .mdl-layout-nav-header {
+  width: 210px;
+  height: 64px;
+  text-overflow: ellipsis;
+  padding-left: 20px;
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: white;
+  width: 100%;
+  height: 128px;
+  background: #ffffff url("https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png") no-repeat right; }
+  .mdl-layout__drawer > .mdl-layout-nav-header .img-thumb {
+    width: 72px;
+    height: 72px;
+    margin-top: 32px; }
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  font-size: 16px;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
 
 @media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer > .mdl-layout__drawer {
-    background-color: rgba(86, 118, 165, 0.75);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF5676A5,endColorstr=#BF5676A5); }
+    background-color: #5676a5; }
     .mdl-layout--fixed-drawer > .mdl-layout__drawer.fixed {
       position: fixed;
       top: 68px; } }

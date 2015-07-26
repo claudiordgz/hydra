@@ -4350,7 +4350,7 @@ blockquote {
   position: relative !important;
 }
 
-.mdl-layout__drawer>.mdl-layout-title {
+@mixin titleSettings {
   width: 210px;
   height: 64px;
   text-overflow: ellipsis;
@@ -4359,15 +4359,45 @@ blockquote {
   display: block;
   overflow: hidden;
   white-space: nowrap;
+  color: white;
 }
 
-.mdl-navigation__link {
+.mdl-layout__drawer > .mdl-layout-title {
+  @include titleSettings;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 2px;
+    @include transparent(#ececec, 0.8);
+  }
+}
+
+.mdl-layout__drawer > .mdl-layout-nav-header {
+  @include titleSettings;
+  width: 100%;
+  height: 128px;
+  background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat right;
+  .img-thumb {
+    width: 72px;
+    height: 72px;
+    margin-top: 32px
+  }
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
   font-size: 16px;
+  color: white;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+
 }
 
 @media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer>.mdl-layout__drawer {
-    @include transparent(#5676a5, 0.75);
+    background-color: #5676a5;
     &.fixed {
       position: fixed;
       top: 68px;
