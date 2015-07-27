@@ -28,7 +28,7 @@
                                 var zergnet = document.createElement('script');
                                 zergnet.type = 'text/javascript'; zergnet.async = true;
                                 zergnet.src = 'http://www.zergnet.com/zerg.js?id=32930';
-                                var znscr = document.getElementsByTagName('script')[0];
+                                var znscr = document.getElementsByTagName('zergnet-widget-32930')[0];
                                 znscr.parentNode.insertBefore(zergnet, znscr);
                             })();
                         </script>
@@ -79,7 +79,6 @@
             </div>
             <section class="next-post" data-current-url="{{url absolute="true"}}">
             </section>
-            {{>footer/one-column}}
         </div>
     </div>
 </div>

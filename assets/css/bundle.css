@@ -1,4 +1,4 @@
-.transparent-background, .mdl-layout__drawer > .mdl-layout-title::after {
+.transparent-background, ul.social li:hover, .mdl-layout__drawer > .mdl-layout-title::after, .mdl-layout__drawer > .mdl-layout-nav-header ul.social li:hover {
   background-color: transparent;
   zoom: 1; }
 
@@ -206,12 +206,10 @@ ul.social {
         -ms-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
     ul.social li:hover {
-      background-color: #fff; }
+      background-color: rgba(255, 255, 255, 0.4);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66FFFFFF,endColorstr=#66FFFFFF); }
       ul.social li:hover a i {
         color: #444; }
-  ul.social.top {
-    text-align: right;
-    margin-left: 10px; }
 
 .header {
   background: transparent;
@@ -3533,17 +3531,71 @@ blockquote:before, blockquote:after {
   white-space: nowrap;
   color: white;
   width: 100%;
-  height: 128px;
-  background: #ffffff url("https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png") no-repeat right; }
+  height: 156px;
+  background: #ffffff url("https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png") no-repeat top right; }
   .mdl-layout__drawer > .mdl-layout-nav-header .img-thumb {
     width: 72px;
     height: 72px;
-    margin-top: 32px; }
+    margin-top: 20px; }
+  .mdl-layout__drawer > .mdl-layout-nav-header ul.social {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
+    line-height: 1;
+    margin-top: 20px; }
+    .mdl-layout__drawer > .mdl-layout-nav-header ul.social li {
+      display: inline-block;
+      overflow: hidden;
+      line-height: 32px;
+      width: 32px;
+      height: 32px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 2px solid #444;
+      margin: 0 1px;
+      text-align: center;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .mdl-layout__drawer > .mdl-layout-nav-header ul.social li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        font-size: 18px !important;
+        line-height: 1.6em;
+        position: relative;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .mdl-layout__drawer > .mdl-layout-nav-header ul.social li a i {
+          color: #444;
+          font-size: 18px !important;
+          line-height: 1.6em;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+      .mdl-layout__drawer > .mdl-layout-nav-header ul.social li:hover {
+        background-color: rgba(86, 118, 165, 0.4);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#665676A5,endColorstr=#665676A5); }
+        .mdl-layout__drawer > .mdl-layout-nav-header ul.social li:hover a i {
+          color: #444; }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
   font-size: 16px;
   color: white;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+
+.mdl-layout--fixed-drawer > .mdl-layout__drawer {
+  background-color: #5676a5; }
 
 @media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer > .mdl-layout__drawer {

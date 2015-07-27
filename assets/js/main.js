@@ -40,7 +40,10 @@ var sfApp={
                                         result['link'] = itemUrl;
                                         result['title'] = $(this).find('title').eq(0).text();
                                         result['pubDate'] = sfApp.formatDate( new Date($(this).find('pubDate').eq(0).text()));
-                                        var $desc = $($(this).find('description').eq(0).text());
+                                        var $desc = $(this).find('description');
+                                        console.log($desc);
+                                        $desc = $desc.eq(0).text();
+                                        $desc = $($desc);
                                         if($desc.first().is('iframe')){
                                             var $iframeEl=$desc.first();
                                             var frameSrc=$desc.first().attr('src');
@@ -1037,7 +1040,8 @@ var sfApp={
         var correctScrollToTopBottom = ($(window).scrollTop() + screen.height);
         var allMightyHeight = parseFloat(document.body.clientHeight);
         var allMightyOffset = allMightyHeight - ((allMightyHeight * 0.2));
-        var otherPos = $('.post-footer').offset().top;
+        var otherPos = $('.next-post').offset();
+        otherPos = otherPos.top ? otherPos.top : 0;
         if(correctScrollToTopBottom < (allMightyOffset) ||
             correctScrollToTopBottom < otherPos){
             if($(window).width()>979){

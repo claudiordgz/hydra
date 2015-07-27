@@ -209,7 +209,7 @@ a {
   }
 }
 
-ul.social {
+@mixin social-mixin($text-color, $background-hover-color) {
   display: inline-block;
   text-align: center;
   margin: 0;
@@ -224,7 +224,7 @@ ul.social {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 2px solid $text-color;
     margin: 0 1px;
     text-align: center;
     @include ease-in-out-transition(0.2s);
@@ -237,22 +237,22 @@ ul.social {
       position: relative;
       @include ease-in-out-transition(0.2s);
       i {
-        color: #fff;
+        color: $text-color;
         @include fontProperties();
         @include ease-in-out-transition(0.2s);
       }
     }
     &:hover {
-      background-color: #fff;
+      @include transparent($background-hover-color, 0.4);
       a i {
         color: $general-font-color;
       }
     }
   }
-  &.top {
-    text-align: right;
-    margin-left: 10px;
-  }
+}
+
+ul.social {
+  @include social-mixin(#fff, #fff);
 }
 
 .header {
@@ -4379,12 +4379,16 @@ blockquote {
 .mdl-layout__drawer > .mdl-layout-nav-header {
   @include titleSettings;
   width: 100%;
-  height: 128px;
-  background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat right;
+  height: 156px;
+  background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat top right;
   .img-thumb {
     width: 72px;
     height: 72px;
-    margin-top: 32px
+    margin-top: 20px
+  }
+  ul.social {
+    @include social-mixin(#444, $main-color);
+    margin-top: 20px;
   }
 }
 
@@ -4395,9 +4399,17 @@ blockquote {
 
 }
 
+@mixin drawerProperties() {
+  background-color: #5676a5;
+}
+
+.mdl-layout--fixed-drawer>.mdl-layout__drawer {
+  @include drawerProperties();
+}
+
 @media screen and (min-width: 1025px) {
   .mdl-layout--fixed-drawer>.mdl-layout__drawer {
-    background-color: #5676a5;
+    @include drawerProperties();
     &.fixed {
       position: fixed;
       top: 68px;
@@ -4415,3 +4427,5 @@ blockquote {
 #next-page {
   margin: 50px 0 50px 0;
 }
+
+
