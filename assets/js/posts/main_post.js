@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             drawer.className = className;
         }
     });
-    loadScript('//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', adsLoaded);
-    loadScript('http://www.zergnet.com/zerg.js?id=32930', adsLoaded);
-    loadScript('http://www.zergnet.com/zerg.js?id=32875', adsLoaded);
+    ['//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js','http://www.zergnet.com/zerg.js?id=32930',
+        'http://www.zergnet.com/zerg.js?id=32875'].map(function (script){
+            loadScript(script, adsLoaded);
+        });
 });
