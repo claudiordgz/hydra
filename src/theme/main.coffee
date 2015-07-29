@@ -611,7 +611,10 @@ sfApp =
     $('input, textarea').placeholder()
     return
   init: ->
-    SC.initialize client_id: '425fc6ee65a14efbb9b83b1c49a87ccb'
+    scInit = false
+    if SC
+      SC.initialize client_id: '425fc6ee65a14efbb9b83b1c49a87ccb'
+      scInit = true
     if typeof window.scStreams == 'undefined'
       window.scStreams = []
     sfApp.refreshIntro()
@@ -626,6 +629,9 @@ sfApp =
     sfApp.searchHandler()
     sfApp.mailchimpHandler()
     sfApp.misc()
+    if !scInit && SC
+      SC.initialize client_id: '425fc6ee65a14efbb9b83b1c49a87ccb'
+      scInit = true
     return
 
 ###================================================================###
