@@ -79,6 +79,13 @@
             "{{asset "css/YTPlayer.css"}}"];
         var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
     </script>
+    {{#unless posts}}
+        <script>
+            [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            });
+        </script>
+    {{/unless}}
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
     <script async type="text/javascript" src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
     <script async type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
@@ -96,13 +103,6 @@
     {{else}}
         <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
     {{/if}}
-    {{#unless posts}}
-        <script>
-            [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            });
-        </script>
-    {{/unless}}
     {{{block "customScript"}}}
 </body>
 </html>
