@@ -1,5 +1,5 @@
 
-util = require "../common/util"
+util = require "../../common/util"
 
 nextPost = () ->
   if $('.next-post').length
