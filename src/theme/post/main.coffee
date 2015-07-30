@@ -89,7 +89,7 @@ document.addEventListener 'DOMContentLoaded', (event) ->
         navigationLinks.appendChild linkToTag
         i += 1
     i++
-  util.addEvent window, 'scroll', (event) ->
+  addEvent window, 'scroll', (event) ->
     scrollY = document.body.scrollTop
     if scrollY >= 585
       if !/fixed/.test(drawer.className)
