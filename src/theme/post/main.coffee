@@ -58,9 +58,8 @@ $(window).bind 'resizeEnd', ->
   app.app.refreshIntro()
   return
 
-
-document.addEventListener 'DOMContentLoaded', (event) ->
-  app.app.init()
+$(document).ready ->
+  app.app.setup()
   pageContent = document.getElementsByClassName('post-content')[0]
   navigationLinks = document.getElementsByClassName('mdl-navigation')[0]
   postTitle = document.getElementsByClassName('post-title')[0]
