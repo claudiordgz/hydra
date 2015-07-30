@@ -1,5 +1,5 @@
 
-util = require "../common/util"
+util = require "../../common/util"
 
 formatBlog = () ->
   if $('.post').length and ($('body').is('.post-template') or $('body').attr('data-post-mode') == 'multimedia' and ($('body').is('.home-template') or $('body').is('.archive-template') or $('body').is('.tag-template')))
@@ -201,21 +201,6 @@ formatBlog = () ->
                   defaultColor: 'rgba(0,0,0,0.4)'
                   loadedColor: 'rgba(69,69,69,0.8)'
                   playedColor: 'rgba(255,102,0,0.8)'
-              SC.get '/tracks/' + data.id, (track) ->
-                waveform = new Waveform(
-                  container: $audioPlayer[0]
-                  innerColor: waveformColorOptions.defaultColor)
-                waveform.dataFromSoundCloudTrack track
-                streamOptions = waveform.optionsForSyncedStream(waveformColorOptions)
-                onfinishOptions = onfinish: ->
-                  $playback.removeClass 'playing'
-                  console.log 'track finished'
-                  return
-                jQuery.extend streamOptions, onfinishOptions
-                SC.stream track.uri, streamOptions, (stream) ->
-                  window.scStreams.push stream
-                  return
-                return
               $audioPlayer.data 'track-index', trackIndex
               $playback.data 'track-index', trackIndex
               $audioPlayer.addClass 'inited'
