@@ -8,6 +8,10 @@
     "email": "claudio.rdgz@gmail.com",
     "url": "http://www.claudiordgz.com"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/claudiordgz/hydra.git"
+  },
   "devDependencies": {
     "browserify": "^11.0.0",
     "clean-css": "^3.3.6",
@@ -16,12 +20,12 @@
     "hashmark": "^3.0.0",
     "minifyify": "^7.0.3",
     "moment": "^2.10.6",
+    "node-bourbon": "^4.2.3",
     "node-sass": "^3.2.0"
   },
   "scripts": {
     "build:coffee": "coffee -o src/dist/ -c src/theme",
     "browserify": "browserify src/dist/main.js -o assets/js/bundle.js",
-    "browserify:exorcist": "browserify src/dist/main.js --debug | exorcist assets/js/bundle.js.map >  assets/js/bundle.js",
     "deploy-js": "npm run build-coffee && npm run browserify",
     "build:scripts:main:debug": "browserify -d src/dist/blog/main.js | hashmark -n src/dist/blog/main.js -s -l 8 'assets/js/{name}{ext}'",
     "build:scripts:post:debug": "browserify -d src/dist/post/main.js | hashmark -n src/dist/post/main.js -s -l 8 'assets/js/{name}.post{ext}'",
@@ -29,17 +33,17 @@
     "build:scripts:post": "browserify -d src/dist/post/main.js -p [minifyify --compressPath src/dist/post --output assets/js/main.post.js.map] | hashmark -n src/dist/post/main.js -s -l 8 'assets/js/{name}.post{ext}'",
     "build:scripts": "npm run build:coffee && npm run build:scripts:main && npm run build:scripts:post",
     "build:scripts:debug": "npm run build:scripts:main:debug && npm run build:scripts:post:debug/",
-    "sass": "node-sass assets/css/scss/style.scss assets/css/bundle.css",
+    "sass": "node-sass --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/style.scss assets/css/bundle.css",
     "minify-css": "cleancss -o assets/css/bundle.min.css assets/css/bundle.css",
-    "build-theme-css": "npm run sass && npm run minify-css",
-    "facebook-post": "node-sass --include-path=assets/css/scss/posts/ assets/css/scss/posts/facebook_share.scss assets/css/posts/facebook_share.css",
+    "build:css:theme": "npm run sass && npm run minify-css",
+    "facebook-post": "node-sass --include-path=src/scss/posts/ --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/posts/facebook_share.scss assets/css/posts/facebook_share.css",
     "minify-facebook-post": "cleancss -o assets/css/posts/facebook_share.css assets/css/posts/facebook_share.css",
-    "build-fb-css": "npm run facebook-post && npm run minify-facebook-post",
-    "unit-test-post": "node-sass --include-path=assets/css/scss/posts/ assets/css/scss/posts/unit_test_post.scss assets/css/posts/unit_test_post.css",
+    "build:css:post:fb": "npm run facebook-post && npm run minify-facebook-post",
+    "unit-test-post": "node-sass --include-path=src/scss/posts/ --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/posts/unit_test_post.scss assets/css/posts/unit_test_post.css",
     "minify-unit-test-post": "cleancss -o assets/css/posts/unit_test_post.css assets/css/posts/unit_test_post.css",
-    "build-ut-css": "npm run unit-test-post && npm run minify-unit-test-post",
-    "build-css": "npm run build-theme-css && npm run build-fb-css && npm run build-ut-css",
-    "merge-css": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
-    "deploy-css": "npm run build-css && npm run merge-css"
+    "build:css:post:ut": "npm run unit-test-post && npm run minify-unit-test-post",
+    "build:css:all": "npm run build:css:theme && npm run build:css:post:fb && npm run build:css:post:ut",
+    "merge:css:all": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
+    "deploy:css:all": "npm run build:css:all && npm run merge:css:all"
   }
 }
