@@ -1,5 +1,5 @@
 
-app = require "../blog/theme"
+theme = require "../blog/theme"
 toc = require "./TOC/main"
 
 adsLoaded = ->
@@ -25,7 +25,7 @@ loadScript = (url, callback) ->
 
 
 $(document).ready ->
-  app.init()
+  theme.init()
   toc.init()
   [
     '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
