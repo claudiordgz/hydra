@@ -18,7 +18,7 @@ createTOC = () ->
     if childNode
       if childNode.tagName == 'H2'
         textToSlugify = if childNode.innerText then childNode.innerText else if childNode.innerHTML then childNode.innerHTML else childNode.textContent
-        text = slugify(textToSlugify)
+        text = util.slugify(textToSlugify)
         aTag = document.createElement('a')
         aTag.setAttribute 'name', text
         pageContent.insertBefore aTag, childNode
