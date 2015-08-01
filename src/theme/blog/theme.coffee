@@ -5,7 +5,7 @@ infiniteScrolling = require "./post/infinite-scroll"
 widgets = require "./widgets/main"
 formatting = require "./formatting/format-post"
 formattingAjax = require "./formatting/format-post-ajax"
-
+audio = require "./media/audio"
 
 paceOptions = elements: true
 trackIndex = 0
@@ -17,40 +17,8 @@ sfApp =
     formattingAjax.formatBlogAjax($newElements)
   formatBlog: ->
     formatting.formatBlog()
-  audioSeekingHandler: ->
-    jQuery(document).on 'click', '.sf-audio-player', (event) ->
-      $this = jQuery(this)
-      $postHeader = $this.closest('.post-header')
-      $playback = jQuery('.header-wrap .line .audio-playback', $postHeader)
-      if $playback.is('.playing')
-        sfApp.audioScrub $this, event.pageX
-      else
-        console.log 'audio not playing'
-      false
-    return
-  audioScrub: ($element, xPos) ->
-    stream = window.scStreams[$element.data('track-index')]
-    needSeek = Math.floor(Math.min(stream.bytesLoaded / stream.bytesTotal, xPos / $element.width()) * stream.durationEstimate)
-    console.log 'seek to:' + needSeek
-    stream.setPosition needSeek
-    return
   audioPlayback: ->
-    jQuery(document).on 'click', '.audio-playback', (event) ->
-      $this = jQuery(this)
-      $postHeader = $this.closest('.post-header')
-      if !$this.is('.playing')
-        if typeof window.scStreams != 'undefined'
-          jQuery.each window.scStreams, (index, stream) ->
-            if index != $this.data('track-index')
-              window.scStreams[index].pause()
-            return
-        jQuery('.audio-playback.playing').removeClass 'playing'
-        $this.addClass 'playing'
-      else
-        $this.removeClass 'playing'
-      window.scStreams[$this.data('track-index')].togglePause()
-      false
-    return
+    audio.audioPlayback()
   videoPlayback: ->
     $(document).on 'click', '.video-playback:not(.vimeo)', (event) ->
       $this = $(this)
@@ -498,7 +466,7 @@ sfApp =
 
 init = () ->
   sfApp.setup()
-  window.onresize ->
+  util.addEvent window, 'resize', (event) ->
     'use strict'
     if @resizeTO
       clearTimeout @resizeTO
