@@ -16,7 +16,7 @@
     "browserify": "^11.0.0",
     "clean-css": "^3.3.6",
     "coffee-script": "^1.9.3",
-    "exorcist": "^0.4.0",
+    "domready": "0.3.0",
     "hashmark": "^3.0.0",
     "jade": "^1.11.0",
     "minifyify": "^7.0.3",

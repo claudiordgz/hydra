@@ -2,11 +2,11 @@
 theme = require "../blog/theme"
 toc = require "./TOC/main"
 scriptLoading = require "../common/dom-manipulation/main"
+domready = require "domready"
 
 adsLoaded = ->
 
-
-$(document).ready ->
+domready ->
   theme.init()
   toc.init()
   [

@@ -1,5 +1,6 @@
 
 theme = require "./theme"
+domready = require "domready"
 
-$(document).ready ->
+domready ->
   theme.init()

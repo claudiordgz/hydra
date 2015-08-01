@@ -17,6 +17,8 @@ infiniteScrolling = require "./post/infinite-scroll"
 widgets = require "./widgets/main"
 formatting = require "./formatting/format-post"
 formattingAjax = require "./formatting/format-post-ajax"
+
+
 paceOptions = elements: true
 trackIndex = 0
 sfApp =
@@ -507,18 +509,17 @@ sfApp =
 ###
 
 init = () ->
-  'use strict'
   sfApp.setup()
-  $(window).resize ->
+  window.onresize ->
     'use strict'
     if @resizeTO
       clearTimeout @resizeTO
     @resizeTO = setTimeout((->
-      $(this).trigger 'resizeEnd'
+      document.dispatchEvent('resizeEnd')
       return
     ), 500)
     return
-  $(window).bind 'resizeEnd', ->
+  util.addEvent window, 'resizeEnd', (event) ->
     'use strict'
     sfApp.refreshIntro()
     return
