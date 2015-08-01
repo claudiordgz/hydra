@@ -1,6 +1,12 @@
 
 format = require "../formatting/format-post-ajax"
 
+getMaxPagination = () ->
+  if $('.total-page').length
+    return parseInt($('.total-page').html())
+  return
+
+
 infiniteScrollHandler = (sfThemeOptions) ->
   if $('.post-list').length and $('body').data('infinite-scroll') == true
     $container = $('.post-list')
@@ -8,7 +14,7 @@ infiniteScrollHandler = (sfThemeOptions) ->
       navSelector: '.pagination'
       nextSelector: '.pagination a.older-posts'
       itemSelector: '.post'
-      maxPage: sfApp.getMaxPagination()
+      maxPage: getMaxPagination()
       loading:
         finishedMsg: 'No more post to load.'
         img: sfThemeOptions.global.rootUrl + '/assets/img/loading.gif'

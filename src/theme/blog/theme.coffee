@@ -1,15 +1,3 @@
-
-
-###  TABLE OF CONTENT
-    1. Common function
-    2. Initialing
-###
-
-###================================================================###
-
-###  1. Common function
-/*================================================================
-###
 util = require "../common/util"
 pagination = require "./post/next-post"
 recentPost = require "./post/recent-post"
