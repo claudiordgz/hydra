@@ -1,12 +1,10 @@
-util = require "../common/util"
+util = require "../../common/util"
 
 createTOC = () ->
   pageContent = document.getElementsByClassName('post-content')[0]
   navigationLinks = document.getElementsByClassName('mdl-navigation')[0]
   postTitle = document.getElementsByClassName('post-title')[0]
   navigationTitle = document.getElementsByClassName('mdl-layout-title')[0]
-  className = 'mdl-layout__drawer'
-  drawer = document.getElementsByClassName(className)[0]
   if navigationTitle.innerText
     navigationTitle.innerText = postTitle.innerText
   else if navigationTitle.innerHTML
@@ -32,6 +30,8 @@ createTOC = () ->
 
 stickyTOC = () ->
   util.addEvent window, 'scroll', (event) ->
+    className = 'mdl-layout__drawer'
+    drawer = document.getElementsByClassName(className)[0]
     scrollY = document.body.scrollTop
     if scrollY >= 585
       if !/fixed/.test(drawer.className)
