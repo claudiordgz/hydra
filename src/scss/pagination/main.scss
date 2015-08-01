@@ -1,0 +1,109 @@
+@import '_bourbon';
+@import '../properties';
+@import '../mixins';
+
+/*
+-----------------------------------------------------------------------------------------
+PAGINATION
+-----------------------------------------------------------------------------------------
+*/
+
+.pagination-section {
+  border-top: solid 1px #EAEDEE;
+  background-color: #fff;
+  position: relative;
+}
+
+.pagination-wrap {
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: center;
+  padding: 40px;
+  .pagination {
+    display: block;
+    text-align: center;
+    .page-number {
+      margin: 0 20px;
+      span {
+        font-weight: 700;
+        margin: 0 2px;
+        display: inline-block;
+      }
+    }
+    .newer-posts {
+      float: right;
+    }
+    .older-posts {
+      float: left;
+    }
+    .newer-posts, .older-posts {
+      display: inline-block;
+      padding: 5px 40px;
+      font-weight: bold;
+      border: solid 2px $general-font-color;
+      @include rounded(5px);
+      color: $general-font-color;
+      text-decoration: none;
+      @include ease-in-out-transition(0.2s);
+    }
+  }
+}
+
+body[data-uppercase="true"] .pagination-wrap .pagination {
+  .newer-posts span, .older-posts span {
+    text-transform: uppercase;
+  }
+}
+
+.pagination-wrap .pagination {
+  .newer-posts.disable, .older-posts.disable {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+  }
+  .newer-posts i {
+    margin-left: 10px;
+  }
+  .older-posts i {
+    margin-right: 10px;
+  }
+  .newer-posts.disable {
+    span, i {
+      color: #DDDDDD;
+    }
+  }
+  .older-posts.disable {
+    span, i {
+      color: #DDDDDD;
+    }
+  }
+  .newer-posts:hover, .older-posts:hover {
+    color: #fff;
+    background-color: $general-font-color;
+  }
+  .newer-posts:hover {
+    span, i {
+      color: #fff;
+    }
+  }
+  .older-posts:hover {
+    span, i {
+      color: #fff;
+    }
+  }
+  .newer-posts.disable:hover, .older-posts.disable:hover {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    background-color: transparent;
+  }
+  .newer-posts.disable:hover {
+    span, i {
+      color: #DDDDDD;
+    }
+  }
+  .older-posts.disable:hover {
+    span, i {
+      color: #DDDDDD;
+    }
+  }
+}

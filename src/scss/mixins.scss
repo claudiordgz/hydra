@@ -9,9 +9,31 @@
     box-shadow: $top $left $blur $color;
   }
 }
+@mixin no-box-shadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
 
 @mixin rounded($radius: 0.5em) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin cover-background($img-uri) {
+  background: url($img-uri) no-repeat center center fixed;
+  @include background-cover();
+}
+
+@mixin ease-in-out-transition($time){
+  @include transition(all $time ease-in-out);
 }

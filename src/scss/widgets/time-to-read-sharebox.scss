@@ -1,0 +1,77 @@
+@import '_bourbon';
+@import '../properties';
+@import '../mixins';
+/*
+-----------------------------------------------------------------------------------------
+TIME TO READ & SHARE BOX
+-----------------------------------------------------------------------------------------
+*/
+
+#time-to-read-nofify {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 20px;
+  z-index: 500;
+  background-color: $general-font-color;
+  color: #fff;
+  @include rounded(3px);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  @include transform(translateZ(0));
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    height: 0;
+    width: 0;
+    margin-top: -4px;
+    border: 4px solid transparent;
+    border-left-color: $general-font-color;
+  }
+}
+
+.share-box {
+  position: fixed;
+  width: 300px;
+  max-height: 150px;
+  right: 20px;
+  top: 0;
+  display: none;
+  z-index: 80;
+  @include transform(translateZ(0));
+  .share-box-wrap {
+    padding: 20px;
+    background-color: $general-font-color;
+    @include rounded(3px);
+    text-align: center;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      margin-top: -10px;
+      border: 10px solid transparent;
+      border-left-color: $general-font-color;
+    }
+    .box-title {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .box-sub-title {
+      color: #fff;
+      font-size: 16px;
+    }
+    .social {
+      margin-top: 15px;
+      margin-left: 0;
+    }
+  }
+}
