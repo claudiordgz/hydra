@@ -46,5 +46,7 @@
     "build:css:all": "npm run build:css:theme && npm run build:css:post:fb && npm run build:css:post:ut",
     "merge:css:all": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
     "deploy:css:all": "npm run build:css:all && npm run merge:css:all"
-  }
+  },
+  "license": "MIT",
+  "readme": "README.md"
 }
