@@ -45,7 +45,8 @@
     "build:css:post:ut": "npm run unit-test-post && npm run minify-unit-test-post",
     "build:css:all": "npm run build:css:theme && npm run build:css:post:fb && npm run build:css:post:ut",
     "merge:css:all": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
-    "deploy:css:all": "npm run build:css:all && npm run merge:css:all"
+    "deploy:css:all": "npm run build:css:all && npm run merge:css:all",
+    "deploy:all": "npm run deploy:css:all && npm run build:scripts"
   },
   "license": "MIT",
   "readme": "README.md"
