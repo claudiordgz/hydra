@@ -246,7 +246,6 @@ formatBlog = () ->
             $audioPlayer.addClass 'inited'
             trackIndex++
         else if $postHeader.is('.has-background')
-          console.log 'has-background'
           bg_url = $postHeader.css('background-image')
           bg_url = bg_url.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '')
           $line.html '<a class="image-popup" href="' + bg_url + '" data-toggle="tooltip" data-placement="right" title="Try me!"></a>'
