@@ -14,14 +14,15 @@
     color: $main-color;
     @extend .defaultTitleConfiguration;
     b {
-      text-shadow: 0 1px 1px rgba(0, 0 ,0, 0.6);
+      @include fontMultiScreen(-1, -1, -1, 0, 0, 1);
+      text-shadow: 0 1px 1px rgba(0, 0 ,0, 0.8);
     }
   }
   .mdl-card__title_two {
     @extend .defaultTitleTwoConfiguration;
   }
   .mdl-card__supporting-text {
-    @include fontMultiScreen(0, 0, 0, 1, 1, 1)
+    @include fontMultiScreen(-1, -1, -1, 0, 0, 0);
   }
   .mdl-card__menu {
     color: #fff;
