@@ -1,4 +1,6 @@
 
+debounce = require './debouncing'
+
 
 addEvent = (obj, type, fn) ->
   if obj.attachEvent
@@ -24,5 +26,6 @@ removeEvent = (obj, type, fn) ->
 
 module.exports = {
   addEvent: addEvent,
-  removeEvent: removeEvent
+  removeEvent: removeEvent,
+  debounce: debounce.debounce
 }

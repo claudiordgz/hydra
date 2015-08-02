@@ -1,7 +1,5 @@
 util = require "../common/util"
-pagination = require "./post/next-post"
-recentPost = require "./post/recent-post"
-infiniteScrolling = require "./post/infinite-scroll"
+pagination = require "./pagination/main"
 widgets = require "./widgets/main"
 formatting = require "./formatting/format-post"
 formattingAjax = require "./formatting/format-post-ajax"
@@ -37,9 +35,9 @@ sfApp =
       false
     return
   getRecentPosts: ->
-    recentPost.getRecentPosts(sfThemeOptions)
+    pagination.getRecentPosts(sfThemeOptions)
   infiniteScrollHandler: ->
-    infiniteScrolling.infiniteScrollHandler(sfThemeOptions)
+    pagination.infiniteScrollHandler(sfThemeOptions)
   getFlickr: ->
     if $('.flickr-feed').length
       count = 1
@@ -242,10 +240,10 @@ sfApp =
         return
     return
   gmapInitialize: ->
-    if jQuery('.gmap').length
-      your_latitude = jQuery('.gmap').data('latitude')
-      your_longitude = jQuery('.gmap').data('longitude')
-      mainColor = sfApp.hexColor(jQuery('.gmap-container').css('backgroundColor'))
+    if $('.gmap').length
+      your_latitude = $('.gmap').data('latitude')
+      your_longitude = $('.gmap').data('longitude')
+      mainColor = sfApp.hexColor($('.gmap-container').css('backgroundColor'))
       myLatlng = new (google.maps.LatLng)(your_latitude, your_longitude)
       mapOptions =
         zoom: 17
@@ -427,7 +425,7 @@ sfApp =
                 enabled: true
                 duration: 300
           return
-    if jQuery('.gmap').length
+    if $('.gmap').length
       sfApp.gmapInitialize()
       google.maps.event.addDomListener window, 'load', sfApp.gmapInitialize
       google.maps.event.addDomListener window, 'resize', sfApp.gmapInitialize
@@ -464,21 +462,15 @@ sfApp =
 /*================================================================
 ###
 
+themeRefreshIntro =  () ->
+  util.debounce((->
+    sfApp.refreshIntro()
+  ), 500)
+
 init = () ->
   sfApp.setup()
-  util.addEvent window, 'resizeEnd', (event) ->
-    'use strict'
-    sfApp.refreshIntro()
-    return
   util.addEvent window, 'resize', (event) ->
-    'use strict'
-    if @resizeTO
-      clearTimeout @resizeTO
-    @resizeTO = setTimeout((->
-      document.dispatchEvent('resizeEnd')
-      return
-    ), 500)
-    return
+    themeRefreshIntro()
 
 
 module.exports = {init: init}

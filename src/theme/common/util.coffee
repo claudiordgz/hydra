@@ -22,6 +22,7 @@ module.exports = {
   formatDate: formatDate
   addEvent: event.addEvent,
   removeEvent: event.removeEvent,
+  debounce: event.debounce,
   loadScript: dom.loadScript,
   slugify: slugify
 }
