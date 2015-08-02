@@ -14,7 +14,7 @@
     color: $main-color;
     @extend .defaultTitleConfiguration;
     b {
-      @include fontMultiScreen(-1, -1, -1, 0, 0, 1);
+      font-size: ms(0);
       text-shadow: 0 1px 1px rgba(0, 0 ,0, 0.8);
     }
   }
@@ -22,7 +22,7 @@
     @extend .defaultTitleTwoConfiguration;
   }
   .mdl-card__supporting-text {
-    @include fontMultiScreen(-1, -1, -1, 0, 0, 0);
+    font-size: ms(0);
   }
   .mdl-card__menu {
     color: #fff;
