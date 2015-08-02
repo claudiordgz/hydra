@@ -96,7 +96,7 @@
         color: #fff;
         position: relative;
         text-decoration: none;
-        @include ease-in-out-transition(0.2s);
+        @include ease-in-out-transition(0.1s);
         a {
           @include titlePropertiesList((0,-1,-1,0,0,0));
           font-weight: 700;

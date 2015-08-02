@@ -43,7 +43,7 @@ a {
 .body-wrap {
   position: relative;
   overflow: hidden;
-  @include ease-in-out-transition(0.3s);
+  @include ease-in-out-transition(0.1s);
 }
 
 .default-speed {
@@ -141,7 +141,7 @@ ul.social {
   height: 100%;
   opacity: 0;
   z-index: 70;
-  @include ease-in-out-transition(0.3s);
+  @include ease-in-out-transition(0.1s);
   &.open {
     top: 0;
     opacity: 1;
@@ -163,7 +163,7 @@ ul.social {
           list-style: none;
           opacity: 0;
           @include transform(translateY(-40px));
-          @include ease-in-out-transition(0.3s);
+          @include ease-in-out-transition(0.1s);
           > a {
             display: block;
             min-width: 150px;
@@ -176,7 +176,7 @@ ul.social {
             line-height: 18px;
             padding: 10px 30px;
             margin: 20px 0;
-            @include ease-in-out-transition(0.2s);
+            @include ease-in-out-transition(0.1s);
           }
           &.active > a, > a:hover {
             background-color: #fff;
@@ -855,7 +855,7 @@ POST DETAIL TEMPLATE
 .post-template .body-content .post {
   .post-header {
     background-color: $general-font-color;
-    @include ease-in-out-transition(0.5s);
+    @include ease-in-out-transition(0.1s);
     &.img-background:after {
       background-color: $general-font-color;
     }
@@ -870,7 +870,7 @@ POST DETAIL TEMPLATE
       left: 0;
       margin-right: auto;
       margin-left: auto;
-      @include ease-in-out-transition(1s);
+      @include ease-in-out-transition(0.1s);
     }
   }
   .post-content {
