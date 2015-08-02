@@ -9,7 +9,6 @@
 }
 
 .half-page-card > {
-
   .mdl-card__title {
     background: center url('http://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437673582/yuno_qdqyi8.jpg');
     color: $main-color;
@@ -27,4 +26,42 @@
   .mdl-card__menu {
     color: #fff;
   }
+}
+
+.demo-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.mdl-cell--11-col {
+
+}
+
+.demo-content {
+  border-radius: 2px;
+  @include respond-to(phone) {
+    padding: 10px 10px;
+    margin-bottom: 10px;
+  }
+  @include respond-to(tablet-portrait) {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+  }
+  @include respond-to(tablet-landscape-desktop) {
+    padding: 15px 32px;
+    margin-bottom: 20px;
+  }
+  @include respond-to(desktop) {
+    padding: 18px 45px;
+    margin-bottom: 30px;
+  }
+  @include respond-to(large-desktop) {
+    padding: 20px 56px;
+    margin-bottom: 40px;
+  }
+}
+
+.demo-content h2 {
+  margin-top: 20px;
 }
