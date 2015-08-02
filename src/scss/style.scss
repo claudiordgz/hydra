@@ -26,7 +26,11 @@ body {
   background-color: #fff;
 }
 
-pre, code, pre code {
+pre, code {
+  font-size: ms(0);
+}
+
+pre code {
   @include titlePropertiesList((0,0,0,1,1,1))
 }
 
