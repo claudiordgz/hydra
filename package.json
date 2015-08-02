@@ -35,7 +35,7 @@
     "build:js:main": "browserify src/dist/blog/main.js | uglifyjs > assets/js/main.js",
     "build:js:post": "browserify src/dist/post/main.js | uglifyjs > assets/js/main.post.js",
     "build:js:debug": "npm run build:js:main:debug && npm run build:js:post:debug/",
-    "build:css:theme": "node-sass --include-path=vendor/responsive-modular-scale/stylesheets --include-path=node_modules/modularscale-sass/stylesheets --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/style.scss assets/css/bundle.min.css",
+    "build:css:theme": "node-sass --include-path=vendor/responsive-modular-scale/stylesheets --include-path=node_modules/modularscale-sass/stylesheets --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/main.scss assets/css/bundle.min.css",
     "minify:css:theme": "cleancss -o assets/css/bundle.min.css assets/css/bundle.min.css",
     "merge:css:theme": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
     "build:css:post:facebook": "node-sass --include-path=node_modules/modularscale-sass/stylesheets --include-path=src/scss/posts/ --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/posts/facebook_share.scss assets/css/posts/facebook_share.css",
