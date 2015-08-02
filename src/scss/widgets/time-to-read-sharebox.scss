@@ -72,6 +72,21 @@ TIME TO READ & SHARE BOX
     .social {
       margin-top: 15px;
       margin-left: 0;
+      & > li {
+        padding-top: 7px;
+      }
+
+      & > li:hover > a {
+        i {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .share-box-wrap {
+    background-color: $main-color;
+    &::after {
+      border-left-color: $main-color;
     }
   }
 }
