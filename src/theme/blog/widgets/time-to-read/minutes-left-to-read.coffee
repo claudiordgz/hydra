@@ -18,13 +18,15 @@ minutesLeftToReadThanksForSharingWidget = (app) ->
   allMightyHeight = parseFloat(document.body.clientHeight)
   allMightyOffset = allMightyHeight - (allMightyHeight * 0.2)
   otherPos = (document.getElementsByClassName('comment-box')[0]).offsetTop - 500
-  if correctScrollToTopBottom < allMightyOffset or correctScrollToTopBottom < otherPos
+  if correctScrollToTopBottom < otherPos
     if $(window).width() > 979
       $shareBox.fadeOut 100
   else
     $timeToReadNofify.fadeOut 100
     if $(window).width() > 979
       $shareBox.css('top', distance - 150).fadeIn 100
+    else
+      $shareBox.fadeOut 100
   if app.scrollTimer != null
     clearTimeout app.scrollTimer
   app.scrollTimer = setTimeout((->
