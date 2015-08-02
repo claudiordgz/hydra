@@ -1,7 +1,10 @@
+@import "multiple-screens";
+
 $main-color: #5676a5;
 $roboto: "Roboto","Helvetica","Arial",sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 $general-font-color: #444;
+
 
 .transparent-background {
   background-color: transparent;
@@ -26,4 +29,51 @@ $general-font-color: #444;
   }
 }
 
+@mixin fontProperties(){
+  font-size: ms(0);
+  line-height: ms(0);
+}
 
+@mixin ease-in-out-transition($time){
+  @include transition(all $time ease-in-out);
+}
+
+@mixin social-mixin($text-color, $background-hover-color) {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+  line-height: 1;
+  li {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    @include rounded(50%);
+    border: 2px solid $text-color;
+    margin: 0 1px;
+    text-align: center;
+    @include ease-in-out-transition(0.2s);
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      @include fontProperties();
+      position: relative;
+      @include ease-in-out-transition(0.2s);
+      i {
+        color: $text-color;
+        @include fontProperties();
+        @include ease-in-out-transition(0.2s);
+      }
+    }
+    &:hover {
+      @include transparent($background-hover-color, 0.4);
+      a i {
+        color: $general-font-color;
+      }
+    }
+  }
+}
