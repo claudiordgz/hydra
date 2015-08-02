@@ -1,0 +1,102 @@
+@import '_bourbon';
+@import '../properties';
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    margin: 0;
+  }
+}
+
+.mdl-layout__container {
+  position: relative !important;
+}
+
+@mixin titleSettings {
+  width: 210px;
+  height: 64px;
+  text-overflow: ellipsis;
+  padding-left: 20px;
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: white;
+}
+
+.mdl-layout__drawer > .mdl-layout-title {
+  @include titleSettings;
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 2px;
+    @include transparent(#ececec, 0.8);
+  }
+}
+
+.mdl-layout__drawer > .mdl-layout-nav-header {
+  @include titleSettings;
+  width: 100%;
+  height: 156px;
+  background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat top right;
+  .img-thumb {
+    width: 72px;
+    height: 72px;
+    margin-top: 20px
+  }
+  ul.social {
+    @include social-mixin(#444, $main-color);
+    margin-top: 20px;
+    li {
+      padding-top: 5px
+    }
+  }
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  font-size: 16px;
+  color: white;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+
+}
+
+@mixin drawerProperties() {
+  background-color: #5676a5;
+}
+
+.mdl-layout>.mdl-layout__drawer {
+  @include drawerProperties();
+}
+
+@media screen and (min-width: 1025px) {
+  .mdl-layout>.mdl-layout__drawer {
+    @include drawerProperties();
+    &.fixed {
+      position: fixed;
+      top: 68px;
+    }
+  }
+}
+
+.modal-dialog {
+  left: 100px;
+  @media only screen and (max-width: 1024px){
+    left: 0;
+  }
+}
+
+#next-page {
+  margin: 50px 0 50px 0;
+}
+
+.mdl-card__title {
+  padding: 16px 48px 16px 16px;
+}
+
+.mdl-layout__drawer-button {
+  margin: 4px;
+  color: rgba(0,0,0,.5);
+}
