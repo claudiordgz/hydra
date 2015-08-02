@@ -236,7 +236,7 @@ formatBlog = () ->
                 $playback.removeClass 'playing'
                 console.log 'track finished'
                 return
-              jQuery.extend streamOptions, onfinishOptions
+              $.extend streamOptions, onfinishOptions
               SC.stream track.uri, streamOptions, (stream) ->
                 window.scStreams.push stream
                 return

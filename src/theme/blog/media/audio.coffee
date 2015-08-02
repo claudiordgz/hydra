@@ -8,10 +8,10 @@ audioScrub = ($element, xPos) ->
   return
 
 audioSeekingHandler = () ->
-  jQuery(document).on 'click', '.sf-audio-player', (event) ->
-    $this = jQuery(this)
+  $(document).on 'click', '.sf-audio-player', (event) ->
+    $this = $(this)
     $postHeader = $this.closest('.post-header')
-    $playback = jQuery('.header-wrap .line .audio-playback', $postHeader)
+    $playback = $('.header-wrap .line .audio-playback', $postHeader)
     if $playback.is('.playing')
       audioScrub $this, event.pageX
     else
@@ -20,15 +20,15 @@ audioSeekingHandler = () ->
   return
 
 audioPlayback = () ->
-  jQuery(document).on 'click', '.audio-playback', (event) ->
-    $this = jQuery(this)
+  $(document).on 'click', '.audio-playback', (event) ->
+    $this = $(this)
     if !$this.is('.playing')
       if typeof window.scStreams != 'undefined'
-        jQuery.each window.scStreams, (index, stream) ->
+        $.each window.scStreams, (index, stream) ->
           if index != $this.data('track-index')
             window.scStreams[index].pause()
           return
-      jQuery('.audio-playback.playing').removeClass 'playing'
+      $('.audio-playback.playing').removeClass 'playing'
       $this.addClass 'playing'
     else
       $this.removeClass 'playing'

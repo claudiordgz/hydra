@@ -3,8 +3,8 @@ util = require "../../common/util"
 
 formatBlogAjax = ($newElements) ->
   if $newElements.length and ($('body').is('.post-template') or $('body').attr('data-post-mode') == 'multimedia' and ($('body').is('.home-template') or $('body').is('.archive-template') or $('body').is('.tag-template')))
-    jQuery.each $newElements, (i, val) ->
-      $this = jQuery(val)
+    $.each $newElements, (i, val) ->
+      $this = $(val)
       $postHeader = $this.find('.post-header')
       $postContent = $this.find('.post-content')
       # Image Post
