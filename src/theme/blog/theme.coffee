@@ -466,6 +466,10 @@ sfApp =
 
 init = () ->
   sfApp.setup()
+  util.addEvent window, 'resizeEnd', (event) ->
+    'use strict'
+    sfApp.refreshIntro()
+    return
   util.addEvent window, 'resize', (event) ->
     'use strict'
     if @resizeTO
@@ -475,9 +479,6 @@ init = () ->
       return
     ), 500)
     return
-  util.addEvent window, 'resizeEnd', (event) ->
-    'use strict'
-    sfApp.refreshIntro()
-    return
+
 
 module.exports = {init: init}

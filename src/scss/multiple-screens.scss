@@ -1,0 +1,71 @@
+@import '_bourbon';
+@import '_modular-scale';
+
+$media-types: (phone: '(max-width: 480px)',
+        tablet-portrait: '(min-width: 481px) and (max-width: 767px)',
+        tablet-landscape-desktop: '(min-width: 768px) and (max-width: 1199px)',
+        desktop: '(min-width: 1200px) and (max-width: 1919px)',
+        large-desktop: '(min-width: 1920px)',
+        non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)',
+        retina: 'screen and (-webkit-min-device-pixel-ratio: 2)');
+
+@mixin respond-to($media) {
+  @if not map-contains($media-types, $media) {
+    @warn "#{$media} is not a known media type. Using large-desktop instead.";
+    $media: large-desktop;
+  }
+  @media #{map-get($media-types, $media)} {
+    @content;
+  }
+}
+
+$ms-base: 1em;
+$ms-ratio: 1.618;
+$h1-list: 3, 1, 2, 2, 3, 3;
+$h2-list: 3, 1, 1, 2, 3, 3;
+$h3-list: 3, 1, 1, 2, 2, 2;
+$h4-list: 2, 0, 0, 1, 2, 2;
+$h5-list: 1, 0, 0, 0, 1, 1;
+$h6-list: 0, 0, 0, 0, 1, 1;
+
+@mixin fontMultiScreen($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop) {
+  font-size: ms($default);
+  @include respond-to(phone) {
+    font-size: ms($phone);
+  }
+  @include respond-to(tablet-portrait) {
+    font-size: ms($tablet-portrait);
+  }
+  @include respond-to(tablet-landscape-desktop) {
+    font-size: ms($tablet-landscape);
+  }
+  @include respond-to(desktop) {
+    font-size: ms($desktop);
+  }
+  @include respond-to(large-desktop) {
+    font-size: ms($large-desktop);
+  }
+}
+
+@mixin titlePropertiesList($propertiesList) {
+  @include fontMultiScreen( nth($propertiesList, 1),
+          nth($propertiesList, 2),
+          nth($propertiesList, 3),
+          nth($propertiesList, 4),
+          nth($propertiesList, 5),
+          nth($propertiesList, 6));
+}
+
+@mixin headerProperties {
+  $header-list: h1, h2, h3, h4, h5, h6;
+  $headers: $h1-list, $h2-list, $h3-list, $h4-list, $h5-list, $h6-list;
+  @for $i from 1 through length($header-list) {
+    #{nth($header-list, $i)} {
+      @include titlePropertiesList(nth($headers, $i));
+    }
+  }
+}
+
+@mixin basicParagraphFont {
+  @include fontMultiScreen(0, 1, 1, 1, 1, 1);
+}
