@@ -49,9 +49,12 @@ PAGINATION
   }
 }
 
-body[data-uppercase="true"] .pagination-wrap .pagination {
-  .newer-posts span, .older-posts span {
+.pagination-wrap .pagination {
+  .newer-posts span,
+  .page-number,
+  .older-posts span {
     text-transform: uppercase;
+    @include titlePropertiesList($h4-list);
   }
 }
 
