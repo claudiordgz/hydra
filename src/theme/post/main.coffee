@@ -3,6 +3,7 @@ theme = require "../blog/theme"
 toc = require "./TOC/main"
 scriptLoading = require "../common/dom-manipulation/main"
 domready = require "domready"
+socialSharing = require "./social_sharing/main"
 
 adsLoaded = ->
 

@@ -1,7 +1,7 @@
 jade = require('jade')
 
 class AdProperties
-  constructor: (@width, @height) ->
+  constructor: (@width, @height, @srcUrl) ->
 
 adSizes =
   byWidth: [
@@ -16,3 +16,6 @@ adSizes =
     AdProperties(120, 240)
     AdProperties(160, 600)
   ]
+
+injectAmazonAd = () ->
+  amzBottomAd = document.getElementById('amazon-bottom-ad')

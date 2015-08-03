@@ -1,0 +1,2 @@
+
+fb = require './facebook-sdk'
