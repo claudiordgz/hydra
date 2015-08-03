@@ -1,3 +1,5 @@
+@import '../properties';
+
 .mdl-button--fab .material-icons {
   color: #ffffff;
 }
@@ -217,6 +219,7 @@
 }
 
 .defaultTitleConfiguration {
+  @include titlePropertiesList((-1,-1,-1,-1,-1,-1));
   color: #fff;
   height: 176px;
   background-image: url('http://res.cloudinary.com/www-claudiordgz-com/image/upload/v1436713622/19369967005_0dc811c9a0_muuode.jpg');
@@ -266,7 +269,7 @@
     @extend .defaultTitleTwoConfiguration;
   }
   .mdl-card__supporting-text {
-    font-size: 16px !important;
+    font-size: ms(0);
   }
   .mdl-card__menu {
     color: #fff;
