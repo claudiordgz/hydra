@@ -209,7 +209,6 @@ formatBlog = () ->
         else if $postContent.has('iframe[src^="https://w.soundcloud.com"]').length
           $audioEl = $postContent.find('iframe[src^="https://w.soundcloud.com"]')
           regExp = /soundcloud.com\/tracks\/(\d+)/
-          soundcloudUrl = ''
           regResult = $audioEl.attr('src').match(regExp)
           if regResult.length and regResult[1] != ''
             $postHeader.append '<div class="sf-audio-player"></div>'
