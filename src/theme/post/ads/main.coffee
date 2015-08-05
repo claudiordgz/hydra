@@ -19,3 +19,10 @@ adSizes =
 
 injectAmazonAd = () ->
   amzBottomAd = document.getElementById('amazon-bottom-ad')
+  postContent = document.getElementsByClassName('post-content')
+  console.log(postContent)
+
+
+module.exports = {
+  injectAmazonAd : injectAmazonAd
+}

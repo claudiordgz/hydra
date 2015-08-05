@@ -4,12 +4,14 @@ toc = require "./TOC/main"
 scriptLoading = require "../common/dom-manipulation/main"
 domready = require "domready"
 socialSharing = require "./social_sharing/main"
+ads = require "./ads/main"
 
 adsLoaded = ->
 
-document.addEventListener('mdl-componentupgraded', (events) ->
+setupHandler = (event) ->
   theme.init()
   toc.init()
+  ads.injectAmazonAd()
   [
     '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 #'http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fl0b84-20%2F8009%2Fc59a34de-018f-4ef1-90c8-662ff2f20823&Operation=GetScriptTemplate', # 728X90
@@ -18,5 +20,9 @@ document.addEventListener('mdl-componentupgraded', (events) ->
   ].map (script) ->
     scriptLoading.loadScript script, adsLoaded
     return
+  console.log("PLEASE ONE TIME")
+  window.removeEventListener('mdl-componentupgraded', setupHandler, false );
   return
-)
+
+domready ->
+  window.addEventListener("mdl-componentupgraded", setupHandler, false);
