@@ -35,7 +35,7 @@
     "build:js:post:debug": "browserify -d src/dist/post/main.js -o assets/js/main.post.js",
     "build:js:main": "browserify src/dist/blog/main.js | uglifyjs > assets/js/main.js",
     "build:js:post": "browserify src/dist/post/main.js | uglifyjs > assets/js/main.post.js",
-    "build:js:debug": "npm run build:js:main:debug && npm run build:js:post:debug/",
+    "build:js:debug": "npm run build:js:main:debug && npm run build:js:post:debug",
     "build:css:theme": "node-sass --include-path=vendor/responsive-modular-scale/stylesheets --include-path=node_modules/modularscale-sass/stylesheets --include-path=node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets src/scss/main.scss assets/css/bundle.min.css",
     "minify:css:theme": "cleancss -o assets/css/bundle.min.css assets/css/bundle.min.css",
     "merge:css:theme": "echo '<style>' > partials/css/bundle.hbs && sh -c 'cat assets/css/bundle.min.css >> partials/css/bundle.hbs' && echo '\n</style>' >> partials/css/bundle.hbs",
@@ -49,6 +49,7 @@
     "deploy:css:theme:debug": "npm run clean:css && npm run build:css:theme && npm run merge:css:theme",
     "deploy:css:all": "npm run deploy:css:theme && npm run deploy:css:post:facebook && npm run deploy:css:post:unittest",
     "deploy:js:all": "npm run clean:js && npm run build:coffee && npm run build:js:main && npm run build:js:post",
+    "deploy:js:all:debug": "npm run clean:js && npm run build:coffee && npm run build:js:debug",
     "deploy:all": "npm run deploy:css:all && npm run deploy:js:all"
   },
   "license": "MIT",
