@@ -79,7 +79,7 @@ injectAmazonAd = () ->
   bottomAd = bottomAd.replace /\{\{height\}\}/, amazonAds.mainBottomAd.height
   amzBottomAd.innerHTML = bottomAd
   return [
-    { src:amazonAds.mainBottomAd.srcUrl, async:false }
+    { src:amazonAds.mainBottomAd.srcUrl, asynchronous:false }
   ]
 
 module.exports = {
