@@ -16,7 +16,7 @@ setupHandler = (event) ->
     { src:'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', asynchronous: true, element:null }
   ]
   adScripts.map (script) ->
-    scriptLoading.loadScript script.src, script.asynchronous, element, adsLoaded
+    scriptLoading.loadScript script.src, script.asynchronous, script.element, adsLoaded
     return
   window.removeEventListener('mdl-componentupgraded', setupHandler, false );
   return
