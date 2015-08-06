@@ -11,11 +11,12 @@ adsLoaded = ->
 setupHandler = (event) ->
   theme.init()
   toc.init()
-  ads.injectAmazonAd()
-  [
-    { src:'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', asynchronous: true }
-  ].map (script) ->
-    scriptLoading.loadScript script.src, script.asynchronous, adsLoaded
+  adScripts = ads.injectAmazonAd()
+  Array::push.apply adScripts, [
+    { src:'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', asynchronous: true, element:null }
+  ]
+  adScripts.map (script) ->
+    scriptLoading.loadScript script.src, script.asynchronous, element, adsLoaded
     return
   window.removeEventListener('mdl-componentupgraded', setupHandler, false );
   return

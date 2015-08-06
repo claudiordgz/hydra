@@ -1,8 +1,7 @@
 
 
-loadScript = (url, async, callback) ->
+loadScript = (url, async, element, callback) ->
 # Adding the script tag to the head as suggested before
-  head = document.getElementsByTagName('head')[0]
   script = document.createElement('script')
   script.type = 'text/javascript'
   script.src = url
@@ -11,8 +10,13 @@ loadScript = (url, async, callback) ->
   script.onreadystatechange = callback
   script.onload = callback
   script.async = async
-  # Fire the loading
-  head.appendChild script
+  if !element
+    head = document.getElementsByTagName('head')[0]
+    # Fire the loading
+    head.appendChild script
+  else
+    element = document.getElementById(element)
+    element.innerHTML += script
   return
 
 module.exports = {
