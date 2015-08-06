@@ -25,7 +25,7 @@ blockquote {
 }
 
 @mixin drawerProperties() {
-  background-color: #5676a5;
+  background-color: lighten($main-color, 10%);
 }
 
 .mdl-layout {
@@ -49,7 +49,7 @@ blockquote {
       @include titleSettings;
       width: 100%;
       height: 156px;
-      background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat top right;
+      background: #ffffff url('https://s-media-cache-ak0.pinimg.com/236x/83/54/84/835484aca1ee427eb94f76d96917dead.jpg') no-repeat top right;
       .img-thumb {
         width: 72px;
         height: 72px;
