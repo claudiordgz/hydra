@@ -60,7 +60,7 @@ class AdList
 
 class Templates
   constructor: ->
-    @amazonOmakase = '<script type="text/javascript"><!--amazon_ad_tag = "l0b84-20"; amazon_ad_width = "{{width}}"; amazon_ad_height = "{{height}}"; amazon_ad_link_target = "new"; amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; amazon_color_link = "1D7AD7"; amazon_color_price = "D10000"; amazon_color_logo = "DD0BF1";//--></script>'
+    @amazonOmakase = '<script type="text/javascript"><!--amazon_ad_tag = "l0b84-20"; amazon_ad_width = "{{width}}"; amazon_ad_height = "{{height}}"; amazon_ad_link_target = "new"; amazon_ad_border = "hide"; amazon_color_border = "FFFFFF"; amazon_color_link = "1D7AD7"; amazon_color_price = "D10000"; amazon_color_logo = "DD0BF1";//--></script><script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"></script>'
 
 injectAmazonAd = () ->
   postContent = document.getElementsByClassName('post-content')
