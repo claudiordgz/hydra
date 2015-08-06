@@ -1,6 +1,6 @@
 
 
-loadScript = (url, callback) ->
+loadScript = (url, async, callback) ->
 # Adding the script tag to the head as suggested before
   head = document.getElementsByTagName('head')[0]
   script = document.createElement('script')
@@ -10,7 +10,7 @@ loadScript = (url, callback) ->
   # There are several events for cross browser compatibility.
   script.onreadystatechange = callback
   script.onload = callback
-  script.async = true
+  script.async = async
   # Fire the loading
   head.appendChild script
   return
