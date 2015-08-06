@@ -11,12 +11,12 @@ loadScript = (url, async, element, callback) ->
   script.onload = callback
   script.async = async
   if element?
+    element = document.getElementById(element)
+    element.innerHTML += script
+  else
     head = document.getElementsByTagName('head')[0]
     # Fire the loading
     head.appendChild script
-  else
-    element = document.getElementById(element)
-    element.innerHTML += script
   return
 
 module.exports = {
