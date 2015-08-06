@@ -10,7 +10,7 @@ loadScript = (url, async, element, callback) ->
   script.onreadystatechange = callback
   script.onload = callback
   script.async = async
-  if !element
+  if element?
     head = document.getElementsByTagName('head')[0]
     # Fire the loading
     head.appendChild script
