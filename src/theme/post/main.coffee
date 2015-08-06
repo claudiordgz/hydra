@@ -13,10 +13,10 @@ setupHandler = (event) ->
   toc.init()
   adScripts = ads.injectAmazonAd()
   Array::push.apply adScripts, [
-    '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    { src:'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', async: true }
   ]
   adScripts.map (script) ->
-    scriptLoading.loadScript script, adsLoaded
+    scriptLoading.loadScript script.src, script.async adsLoaded
     return
   window.removeEventListener('mdl-componentupgraded', setupHandler, false );
   return
