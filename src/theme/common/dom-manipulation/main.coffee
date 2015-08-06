@@ -12,7 +12,7 @@ loadScript = (url, async, element, callback) ->
   script.async = async
   if element?
     element = document.getElementById(element)
-    element.innerHTML += script
+    element.innerHTML += script.outerHTML
   else
     head = document.getElementsByTagName('head')[0]
     # Fire the loading
