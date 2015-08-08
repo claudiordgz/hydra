@@ -1871,8 +1871,41 @@ a img {
 }
 
 .adslot_1 {
-  width: 320px;
-  height: 100px;
+
+  &::before {
+    content: 'ADVERTISEMENT';
+    border-top: 1px solid #DDDDDD;
+    width: 100%;
+    color: #DDDDDD;
+    display: block;
+  }
+  &::after {
+    content: '';
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    display: block;
+  }
+
+  @include respond-to(phone) {
+    width: 320px;
+    height: 100px;
+  }
+  @include respond-to(tablet-portrait) {
+    width: 200px;
+    height: 250px;
+  }
+  @include respond-to(tablet-landscape-desktop) {
+    width: 200px;
+    height: 250px;
+  }
+  @include respond-to(desktop) {
+    width: 728px;
+    height: 90px;
+  }
+  @include respond-to(large-desktop) {
+    width: 728px;
+    height: 90px;
+  }
 }
 
 .adslot_inside_card {
@@ -2156,4 +2189,5 @@ a {
     text-align: center;
     vertical-align: middle;
   }
+
 }
