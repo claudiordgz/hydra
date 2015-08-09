@@ -24,73 +24,71 @@ blockquote {
   color: white;
 }
 
-.mdl-layout__drawer > .mdl-layout-title {
-  @include titleSettings;
-  &::after {
-    content: " ";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 98%;
-    height: 2px;
-    @include transparent(#ececec, 0.8);
-  }
-}
-
-.mdl-layout__drawer > .mdl-layout-nav-header {
-  @include titleSettings;
-  width: 100%;
-  height: 156px;
-  background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat top right;
-  .img-thumb {
-    width: 72px;
-    height: 72px;
-    margin-top: 20px
-  }
-  ul.social {
-    @include social-mixin(#444, $main-color);
-    margin-top: 20px;
-    li {
-      padding-top: 5px
-    }
-  }
-}
-
-.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-  color: white;
-  border-bottom: 2px solid rgba(255,255,255,0.2);
-  &.tocH2 {
-    padding: 12px 20px;
-  }
-  &.tocH3 {
-    padding: 12px 30px;
-  }
-  &.tocH4 {
-    padding: 12px 40px;
-  }
-  &.tocH5 {
-    padding: 12px 50px;
-  }
-  &.tocH6 {
-    padding: 12px 60px;
-  }
-}
-
 @mixin drawerProperties() {
   background-color: #5676a5;
 }
 
-.mdl-layout>.mdl-layout__drawer {
-  @include drawerProperties();
-}
-
-@media screen and (min-width: 1025px) {
-  .mdl-layout>.mdl-layout__drawer {
+.mdl-layout {
+  &>.mdl-layout__drawer {
     @include drawerProperties();
-    &.fixed {
-      position: fixed;
-      top: 68px;
+
+    &> .mdl-layout-title {
+      @include titleSettings;
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 98%;
+        height: 2px;
+        @include transparent(#ececec, 0.8);
+      }
     }
+
+    & > .mdl-layout-nav-header {
+      @include titleSettings;
+      width: 100%;
+      height: 156px;
+      background: #ffffff url('https://res.cloudinary.com/www-claudiordgz-com/image/upload/v1437496531/LogoClaudio_qn0dgc.png') no-repeat top right;
+      .img-thumb {
+        width: 72px;
+        height: 72px;
+        margin-top: 20px
+      }
+      ul.social {
+        @include social-mixin(#444, $main-color);
+        margin-top: 20px;
+        li {
+          padding-top: 5px
+        }
+      }
+    }
+    .mdl-navigation .mdl-navigation__link {
+      color: white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      &.tocH2 {
+        padding: 12px 20px;
+      }
+      &.tocH3 {
+        padding: 12px 30px;
+      }
+      &.tocH4 {
+        padding: 12px 40px;
+      }
+      &.tocH5 {
+        padding: 12px 50px;
+      }
+      &.tocH6 {
+        padding: 12px 60px;
+      }
+      &:last-child {
+        margin-bottom: 100px;
+      }
+    }
+  }
+
+  &>.mdl-layout__content {
+    touch-action: pan-y;
   }
 }
 
