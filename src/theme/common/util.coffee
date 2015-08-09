@@ -16,6 +16,12 @@ slugify = (text) ->
   text.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+/, '').replace /-+$/, ''
 # Trim - from end of text
 
+getDocumentHeight = () ->
+  body = document.body
+  html = document.documentElement
+  height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
+  return height
+
 
 module.exports = {
   isMobile: isMobile,
@@ -25,4 +31,5 @@ module.exports = {
   debounce: event.debounce,
   loadScript: dom.loadScript,
   slugify: slugify
+  getDocumentHeight: getDocumentHeight
 }
