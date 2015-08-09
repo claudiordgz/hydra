@@ -35,9 +35,9 @@ sfApp =
       false
     return
   getRecentPosts: ->
-    pagination.getRecentPosts(sfThemeOptions)
+    pagination.getRecentPosts(SF_THEME_OPTIONS)
   infiniteScrollHandler: ->
-    pagination.infiniteScrollHandler(sfThemeOptions)
+    pagination.infiniteScrollHandler(SF_THEME_OPTIONS)
   getFlickr: ->
     if $('.flickr-feed').length
       count = 1
@@ -260,7 +260,7 @@ sfApp =
           'lightness': 100
         } ] } ]
       map = new (google.maps.Map)(document.getElementById('gmap'), mapOptions)
-      markerIcon = new (google.maps.MarkerImage)(sfThemeOptions.global.rootUrl + '/assets/img/map-marker.png', null, null, new (google.maps.Point)(32, 32), new (google.maps.Size)(64, 64))
+      markerIcon = new (google.maps.MarkerImage)(SF_THEME_OPTIONS.global.rootUrl + '/assets/img/map-marker.png', null, null, new (google.maps.Point)(32, 32), new (google.maps.Size)(64, 64))
       marker = new (google.maps.Marker)(
         position: myLatlng
         flat: true
@@ -307,7 +307,7 @@ sfApp =
     if keyword != ''
       $.ajax
         type: 'GET'
-        url: sfThemeOptions.global.rootUrl
+        url: SF_THEME_OPTIONS.global.rootUrl
         success: (response) ->
           $response = $(response)
           postPerPage = $response.find('section.post').length
@@ -315,9 +315,9 @@ sfApp =
           maxPage = Math.floor(postPerPage * totalPage / 15) + 1
           timeout = setInterval((->
             page = page + 1
-            ajaxUrl = sfThemeOptions.global.rootUrl + '/rss/' + page + '/'
+            ajaxUrl = SF_THEME_OPTIONS.global.rootUrl + '/rss/' + page + '/'
             if page == 1
-              ajaxUrl = sfThemeOptions.global.rootUrl + '/rss/'
+              ajaxUrl = SF_THEME_OPTIONS.global.rootUrl + '/rss/'
             if page > maxPage
               clearInterval timeout
               if !hasResult

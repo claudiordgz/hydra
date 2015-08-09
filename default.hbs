@@ -38,7 +38,7 @@
     <meta name="google-site-verification" content="RDjtZZJlLJs5gRD8ple1ygWjLZ-bZuOdZ2yiBZgoQuM" /> {{! Change for Google Webmaster verification }}
     {{>css/bundle}}
     {{ghost_head}}
-    <script type="text/javascript"> var sfThemeOptions = { global : {   rootUrl : '{{@blog.url}}' } }</script>
+    <script type="text/javascript"> var SF_THEME_OPTIONS = { global : {   rootUrl : '{{@blog.url}}' } }</script>
     {{! Place your Google Analytic here }}
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -85,6 +85,7 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
             });
         </script>
+        <script type="text/javascript" src="{{asset "vendor/hammer/hammer.min.js"}}"></script>
     {{/unless}}
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
     <script type="text/javascript" src="{{asset "vendor/mdl-1.0.0/material.min.js"}}"></script>

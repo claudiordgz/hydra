@@ -1,6 +1,6 @@
 
 
-getRecentPosts = (sfThemeOptions) ->
+getRecentPosts = (SF_THEME_OPTIONS) ->
   if $('.recent-post').length
     $('.recent-post').each ->
       $this = $(this)
@@ -47,7 +47,7 @@ getRecentPosts = (sfThemeOptions) ->
           isTicker = $this.data('ticker')
       $.ajax
         type: 'GET'
-        url: sfThemeOptions.global.rootUrl + '/rss/'
+        url: SF_THEME_OPTIONS.global.rootUrl + '/rss/'
         dataType: 'xml'
         success: (xml) ->
           if $(xml).length

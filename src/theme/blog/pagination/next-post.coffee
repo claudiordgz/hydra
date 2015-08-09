@@ -11,9 +11,9 @@ nextPost = () ->
     if currentUrl != ''
       timeout = setInterval((->
         page = page + 1
-        ajaxUrl = sfThemeOptions.global.rootUrl + '/rss/' + page + '/'
+        ajaxUrl = SF_THEME_OPTIONS.global.rootUrl + '/rss/' + page + '/'
         if page == 1
-          ajaxUrl = sfThemeOptions.global.rootUrl + '/rss/'
+          ajaxUrl = SF_THEME_OPTIONS.global.rootUrl + '/rss/'
         $.ajax
           type: 'GET'
           url: ajaxUrl
