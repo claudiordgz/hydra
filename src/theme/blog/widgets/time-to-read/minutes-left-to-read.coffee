@@ -24,7 +24,7 @@ minutesLeftToReadThanksForSharingWidget = (app) ->
     if $(window).width() > 1023
       $shareBox.css('top', distance - 150).fadeIn 100
     else
-      $('.comment-box').insertBefore($shareBox)
+      $shareBox.insertBefore('.comment-box')
   if app.scrollTimer != null
     clearTimeout app.scrollTimer
   app.scrollTimer = setTimeout((->

@@ -8,28 +8,9 @@
     <div class="mdl-layout__content">
         <div class="page-content">
             <div itemprop="articleBody" class="post-content">
-                <!-- BlopTop -->
-                <div class="center-unknown">
-                    <div class="el">
-                        <ins class="adsbygoogle adslot_1"
-                             style="display:inline-block;margin: 0 auto 0 auto; width: 90%;"
-                             data-ad-client="ca-pub-1525337072631150"
-                             data-ad-slot="3858661425"
-                             data-ad-format="auto"></ins>
-                    </div>
-                </div>
+                {{>user/ad_over_post}}
                 {{content}}
-                <br/>
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--2-col"></div>
-                    <div class="mdl-cell mdl-cell--8-col">
-                        <script type="text/javascript"><!--
-                        amazon_ad_tag = "l0b84-20"; amazon_ad_width = "600"; amazon_ad_height = "520"; amazon_ad_link_target = "new";//--></script>
-                        <script type="text/javascript" src="http://ir-na.amazon-adsystem.com/s/ads.js"></script>
-                    </div>
-                    <div class="mdl-cell mdl-cell--2-col"></div>
-                </div>
-                <br/>
+                {{>user/ad_under_post}}
                 <div class="share-box">
                     <div class="share-box-wrap">
                         <h3 class="box-title">Thanks for reading!</h3>
