@@ -43,9 +43,20 @@ TIME TO READ & SHARE BOX
   display: none;
   z-index: 80;
   @include transform(translateZ(0));
+
+  @media screen and (max-width: 1023px) {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    max-height: 150px;
+    display: block;
+    right: 0;
+    margin: 0 auto 0 auto;
+  }
+
   .share-box-wrap {
+    background-color: $main-color;
     padding: 20px;
-    background-color: $general-font-color;
     @include rounded(3px);
     text-align: center;
     position: relative;
@@ -56,7 +67,10 @@ TIME TO READ & SHARE BOX
       top: 50%;
       margin-top: -10px;
       border: 10px solid transparent;
-      border-left-color: $general-font-color;
+      border-left-color: $main-color;
+      @media screen and (max-width: 1023px) {
+        display: none;
+      }
     }
     .box-title {
       font-size: 20px;
@@ -68,6 +82,7 @@ TIME TO READ & SHARE BOX
     .box-sub-title {
       color: #fff;
       font-size: 16px;
+      display: block;
     }
     .social {
       margin-top: 15px;
@@ -81,12 +96,6 @@ TIME TO READ & SHARE BOX
           color: $main-color;
         }
       }
-    }
-  }
-  .share-box-wrap {
-    background-color: $main-color;
-    &::after {
-      border-left-color: $main-color;
     }
   }
 }
