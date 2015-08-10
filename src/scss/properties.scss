@@ -79,9 +79,16 @@ $background-color: lighten($main-color, 50% );
       }
     }
     &:hover {
-      @include transparent($background-hover-color, 0.4);
-      a i {
-        color: $general-font-color;
+      background-color: rgba(100,150,150,0.5);
+      border: 2px solid rgba(100,150,150,1);
+      a {
+        i {
+          color: white;
+
+          &::before {
+            color: white;
+          }
+        }
       }
     }
   }
