@@ -5,6 +5,8 @@ minutesLeftToReadThanksForSharingWidget = (app) ->
     $('<div id="time-to-read-nofify"></div>').appendTo 'body'
     if $(window).width() > 1023
       $shareBox.appendTo 'body'
+    else if $(window).width() < 1023
+      $shareBox.insertBefore('.comment-box')
   $timeToReadNofify = $('#time-to-read-nofify')
   $postContent = $('.post-content')
   if !$postContent.data('time-to-read')
@@ -19,12 +21,14 @@ minutesLeftToReadThanksForSharingWidget = (app) ->
   if correctScrollToTopBottom < otherPos
     if $(window).width() > 1023
       $shareBox.fadeOut 100
+    else
+      $shareBox.css('top', 0).fadeIn 100
   else
     $timeToReadNofify.fadeOut 100
     if $(window).width() > 1023
       $shareBox.css('top', distance - 150).fadeIn 100
     else
-      $shareBox.insertBefore('.comment-box')
+      $shareBox.css('top', 0).fadeIn 100
   if app.scrollTimer != null
     clearTimeout app.scrollTimer
   app.scrollTimer = setTimeout((->
