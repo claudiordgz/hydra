@@ -39,7 +39,6 @@
     {{>css/bundle}}
     {{ghost_head}}
     <script type="text/javascript"> var SF_THEME_OPTIONS = { global : {   rootUrl : '{{@blog.url}}' } }</script>
-
     {{>user/analytics}}
 </head>
 <body class="{{body_class}} {{block "customBodyClass"}}"
@@ -63,8 +62,10 @@
     {{ghost_foot}}
     <script>
         var links = ["{{asset "css/Roboto.css"}}", "{{asset "css/material.deep_purple-pink.min.css"}}", "{{asset "css/bootstrap.min.css"}}",
-            "{{asset "css/prism.min.css"}}", "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}"];
-        var priorityLinks=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(priorityLinks):window.addEventListener("load",priorityLinks);
+            "https://fonts.googleapis.com/icon?family=Material+Icons", "{{asset "css/prism.min.css"}}",
+            "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}",
+            "{{asset "css/YTPlayer.css"}}"];
+        var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
     </script>
     {{#unless posts}}
         <script>
@@ -75,11 +76,7 @@
         <script type="text/javascript" src="{{asset "vendor/hammer/hammer.min.js"}}"></script>
     {{/unless}}
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-    <script type="text/javascript" src="{{asset "vendor/mdl-1.0.0/material.min.js"}}"></script>
-    <script>
-        var nonPriorityCssFiles = ["https://fonts.googleapis.com/icon?family=Material+Icons", "{{asset "css/prism.min.css"}}", "{{asset "css/YTPlayer.css"}}"];
-        var nonPriorityCss=function(){for(var e=0;e!=nonPriorityCssFiles.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(nonPriorityCss):window.addEventListener("load",nonPriorityCss);
-    </script>
+    <script type="text/javascript" src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
     <script async type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.mb.YTPlayer.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/waveform.js"}}"></script>
