@@ -1871,14 +1871,16 @@ a img {
   }
 }
 
-.adslot_1 {
-
+@mixin adContent() {
   &::before {
     content: 'ADVERTISEMENT';
-    border-top: 1px solid #DDDDDD;
+    border-top: 1px solid #DDD;
     width: 100%;
-    color: #DDDDDD;
+    color: #777;
     display: block;
+    text-align: left;
+    font-size: ms(-1);
+    text-decoration: none;
   }
   &::after {
     content: '';
@@ -1886,6 +1888,11 @@ a img {
     width: 100%;
     display: block;
   }
+}
+
+.adslot_1 {
+
+  @include adContent();
 
   @include respond-to(phone) {
     width: 320px;
@@ -1913,11 +1920,19 @@ a img {
   margin: 20px 0 5px 0;
   width: 234px;
   height: 60px;
+
+  @include adContent();
 }
 
 .adslot_inside_card_100pw_300pxh {
   width: 336px;
   height: 280px;
+
+  @include adContent();
+}
+
+.post-ad {
+  @include adContent();
 }
 
 #zergnet-widget-32875 {
