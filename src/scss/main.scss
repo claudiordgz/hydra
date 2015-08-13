@@ -1881,12 +1881,14 @@ a img {
     text-align: left;
     font-size: 13px;
     text-decoration: none;
+    margin-bottom: 5px;
   }
   &::after {
     content: '';
     border-bottom: 1px solid #DDDDDD;
     width: 100%;
     display: block;
+    margin-top: 5px;
   }
 }
 
