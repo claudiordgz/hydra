@@ -284,9 +284,8 @@ ul.social {
 
         .search-label {
           text-align: center;
-          font-size: 52px;
+          @include titlePropertiesList($h2-list);
           color: #A9A9A9;
-          line-height: 52px;
           font-weight: 400;
           margin-bottom: 30px;
         }
@@ -295,13 +294,11 @@ ul.social {
           background: transparent;
           border: none;
           border-bottom: solid 1px #A9A9A9;
-
+          @include titlePropertiesList($h1-list);
           @include rounded(0);
-
           outline: 0;
           text-align: center;
           color: #A9A9A9;
-          line-height: 20px;
           padding-bottom: 10px;
           width: 100%;
 
