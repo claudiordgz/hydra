@@ -1,0 +1,202 @@
+
+@media (max-width: 1199px) {
+  //colors
+  $black_85: rgba(0, 0, 0, 0.85);
+  $white_85: rgba(255, 255, 255, 0.85);
+  $white: rgba(255, 255, 255, 1);
+  $color_tundora_approx: rgba(68, 68, 68, 1);
+  $color_pumice_approx: rgba(197, 197, 197, 1);
+
+  //original selectors
+  //.site-footer.three-colums .site-footer-wrap .copyright, .site-footer.four-colums .site-footer-wrap .copyright
+  @mixin paddingMarginBorderTopNone() {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+
+
+  .header {
+    padding: 25px 30px 15px;
+    .header-wrap {
+      .addition-container {
+        .social {
+          display: none;
+        }
+        .search-button {
+          margin-right: 5px;
+        }
+      }
+      .nav-container .mini-nav-button {
+        margin-top: 2px;
+      }
+    }
+    &.header-full-screen-center-logo .header-wrap {
+      .nav-container {
+        width: 35px;
+      }
+      .addition-container {
+        width: 35px;
+      }
+    }
+    &.header-standard .header-wrap {
+      .nav-container {
+        position: relative;
+        .mini-nav-button {
+          display: block;
+          margin-right: 0;
+          margin-top: 2px;
+        }
+        .standard-nav {
+          position: absolute;
+          width: 240px;
+          top: 100%;
+          right: 10px;
+          margin-top: 45px;
+          visibility: hidden;
+          opacity: 0;
+          background-color: $black_85;
+          z-index: 80;
+          //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+          transition: all 0.3s ease-in-out;
+          &.open {
+            margin-top: 15px;
+            visibility: visible;
+            opacity: 1;
+          }
+          li {
+            display: block;
+            list-style: none;
+            text-align: right;
+            margin: 15px 10px;
+            a {
+              text-decoration: none;
+              color: $white_85;
+              padding: 0;
+              &:hover {
+                color: $white;
+              }
+            }
+            &.active a {
+              color: $white;
+            }
+          }
+        }
+        .standard-nav::before {
+          content: '';
+          position: absolute;
+          top: -10px;
+          right: 9px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid $black_85;
+          z-index: 80;
+        }
+      }
+      .addition-container .search-button {
+        margin-top: -5px;
+      }
+    }
+    &.fixed-top .header-wrap .nav-container .standard-nav>li>a {
+      color: $white_85;
+      &:before {
+        background-color: $white;
+      }
+    }
+  }
+  #site-intro {
+    &.left-style .intro-wrap {
+      bottom: 80px;
+      .intro-text .action-list {
+        .or-label {
+          display: none;
+        }
+      }
+    }
+    &.right-style .intro-wrap {
+      bottom: 80px;
+      .intro-text .action-list {
+        .or-label {
+          display: none;
+        }
+      }
+    }
+    .intro-wrap .intro-text {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .waveform-canvas {
+    height: 166px;
+  }
+  .pagination-wrap {
+    padding: 30px;
+    .pagination .page-number {
+      display: none;
+    }
+  }
+  .site-footer {
+    .site-footer-wrap {
+      .totop-btn {
+        top: 0;
+        margin-top: -69px;
+        background-color: $color_tundora_approx;
+        border-color: $white;
+      }
+      .footer-social {
+        text-align: center;
+        float: none;
+        margin-top: 10px;
+      }
+      .copyright {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+    &.three-colums .site-footer-wrap .copyright {
+      @include paddingMarginBorderTopNone();
+    }
+    &.four-colums .site-footer-wrap .copyright {
+      @include paddingMarginBorderTopNone();
+    }
+  }
+  .widget {
+    margin-bottom: 30px;
+    border-bottom: solid 1px $color_pumice_approx;
+    padding-bottom: 30px;
+  }
+  .post-template .body-content .post {
+    .post-content {
+      padding: 40px 30px 20px;
+      .post-footer {
+        margin-bottom: 20px;
+      }
+      .share-box {
+        position: relative;
+        width: 100%;
+        max-height: 100%;
+        right: auto;
+        top: auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: block;
+        .share-box-wrap::after {
+          display: none;
+        }
+        .share-box-wrap {
+          .box-sub-title {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 10px;
+          }
+          .social {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .post-header .header-wrap {
+      bottom: 90px;
+    }
+  }
+}
