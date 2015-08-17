@@ -41,7 +41,7 @@ window.feedDialog = (id, caption, picture) ->
 
 window.fbAsyncInit = ->
   FB.init
-    appId: '1597993133788370'
+    appId: '436667083049913'
     xfbml: true
     version: 'v2.4'
   return
