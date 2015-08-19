@@ -35,7 +35,6 @@
     <meta property="og:site_name" content="{{@blog.title}}">
     <meta property="fb:admins" content="">
     {{/if}}
-    <meta name="google-site-verification" content="RDjtZZJlLJs5gRD8ple1ygWjLZ-bZuOdZ2yiBZgoQuM" /> {{! Change for Google Webmaster verification }}
     {{>css/bundle}}
     {{ghost_head}}
     <script type="text/javascript"> var SF_THEME_OPTIONS = { global : {   rootUrl : '{{@blog.url}}' } }</script>
@@ -60,23 +59,42 @@
         </div>
     </div>
     {{ghost_foot}}
-    <script>
-        var links = ["{{asset "css/Roboto.css"}}", "{{asset "css/material.deep_purple-pink.min.css"}}", "{{asset "css/bootstrap.min.css"}}",
-            "https://fonts.googleapis.com/icon?family=Material+Icons", "{{asset "css/prism.min.css"}}",
-            "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}",
-            "{{asset "css/YTPlayer.css"}}"];
-        var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
-    </script>
-    {{#unless posts}}
+    {{#if post}}
+        <style>
+            @font-face {
+                font-family: 'Material Icons';
+                font-style: normal;
+                font-weight: 400;
+                src: url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.eot"}}"); /* For IE6-8 */
+                src: local('Material Icons'),
+                local('MaterialIcons-Regular'),
+                url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff2"}}") format('woff2'),
+                url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff"}}") format('woff'),
+                url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.ttf"}}") format('truetype');
+            }
+        </style>
+        <script>
+            var links = ["{{asset "css/Roboto.css"}}", "{{asset "css/material.deep_purple-pink.min.css"}}", "{{asset "css/bootstrap.min.css"}}",
+                "{{asset "css/prism.min.css"}}", "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}",
+                "{{asset "css/YTPlayer.css"}}"];
+            var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
+        </script>
         <script>
             [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
                 (adsbygoogle = window.adsbygoogle || []).push({});
             });
         </script>
         <script type="text/javascript" src="{{asset "vendor/hammer/hammer.min.js"}}"></script>
-    {{/unless}}
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-    <script type="text/javascript" src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+        <script type="text/javascript" src="{{asset "js/main.post.js"}}"></script>
+        <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    {{else}}
+        <script>
+            var links = ["{{asset "css/Roboto.css"}}", "{{asset "css/bootstrap.min.css"}}",
+                "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}"];
+            var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
+        </script>
+        <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    {{/if}}
     <script async type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.mb.YTPlayer.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/waveform.js"}}"></script>
@@ -87,11 +105,6 @@
     <script async type="text/javascript" src="{{asset "js/pace.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/jquery.placeholder.min.js"}}"></script>
     <script async type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
-    {{#if post}}
-        <script type="text/javascript" src="{{asset "js/main.post.js"}}"></script>
-    {{else}}
-        <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
-    {{/if}}
     {{{block "customScript"}}}
 </body>
 </html>
