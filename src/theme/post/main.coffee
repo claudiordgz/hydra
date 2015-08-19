@@ -10,9 +10,12 @@ adsLoaded = ->
 setupHandler = (event) ->
   theme.init()
   toc.init()
-  [
+  twitter = socialSharing.twitter()
+  asyncJS = [
     { src:'//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', asynchronous: true, element:null }
-  ].map (script) ->
+  ]
+  asyncJS.push(twitter) if twitter
+  asyncJS.map (script) ->
     scriptLoading.loadScript script.src, script.asynchronous, script.element, adsLoaded
     return
   window.removeEventListener('mdl-componentupgraded', setupHandler, false );
