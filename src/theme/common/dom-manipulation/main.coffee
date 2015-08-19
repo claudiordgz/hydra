@@ -10,6 +10,7 @@ loadScript = (url, async, element, callback) ->
   script.onreadystatechange = callback
   script.onload = callback
   script.async = async
+  script.charset = 'utf-8'
   if element?
     element = document.getElementById(element)
     element.innerHTML += script.outerHTML
