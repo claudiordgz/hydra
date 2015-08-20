@@ -2,21 +2,24 @@
 .welcome-text.style1 {
   .line1 {
     color: #fff;
-    @include fontMultiScreen(4, 0, 1, 2, 3, 4);
+    @include fontMultiScreen(2, 0, 0, 1, 2, 2);
+    line-height: ms(0);
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: bold;
   }
   .line2 {
     color: #fff;
-    @include fontMultiScreen(4, 1, 2, 3, 4, 5);
+    @include fontMultiScreen(2, 0, 1, 2, 2, 3);
+    line-height: ms(0);
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: bold;
   }
   .line3 {
     color: #fff;
-    @include fontMultiScreen(4, 1, 2, 3, 4, 5);
+    @include fontMultiScreen(2, 0, 1, 2, 2, 3);
+    line-height: ms(0);
     margin-bottom: 10px;
   }
 }

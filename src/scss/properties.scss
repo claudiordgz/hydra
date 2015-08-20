@@ -38,10 +38,6 @@ $background-color: lighten($main-color, 50% );
   }
 }
 
-@mixin fontProperties(){
-  font-size: ms(0);
-  line-height: ms(0);
-}
 
 @mixin ease-in-out-transition($time){
   @include transition(all $time ease-in-out);
@@ -63,7 +59,7 @@ $background-color: lighten($main-color, 50% );
     border: 2px solid $text-color;
     margin: 0 1px;
     text-align: center;
-    @include ease-in-out-transition(0.2s);
+    @include ease-in-out-transition(0.1s);
     a {
       display: block;
       width: 100%;
@@ -71,11 +67,11 @@ $background-color: lighten($main-color, 50% );
       vertical-align: top;
       @include fontProperties();
       position: relative;
-      @include ease-in-out-transition(0.2s);
+      @include ease-in-out-transition(0.1s);
       i {
         color: $text-color;
         @include fontProperties();
-        @include ease-in-out-transition(0.2s);
+        @include ease-in-out-transition(0.1s);
       }
     }
     &:hover {

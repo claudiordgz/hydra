@@ -21,29 +21,41 @@ $media-types: (phone: '(max-width: 480px)',
 
 $ms-base: 1em;
 $ms-ratio: 1.618;
-$h1-list: 1, 1, 2, 2, 3, 3;
-$h2-list: 1, 1, 1, 2, 3, 3;
+$h1-list: 1, 1, 2, 2, 2, 2;
+$h2-list: 1, 1, 1, 2, 2, 2;
 $h3-list: 1, 1, 1, 2, 2, 2;
-$h4-list: 1, 0, 0, 1, 2, 2;
-$h5-list: 0, 0, 0, 0, 1, 1;
-$h6-list: 0, 0, 0, 0, 1, 1;
+$h4-list: 1, 1, 1, 1, 2, 2;
+$h5-list: 0, 1, 1, 1, 1, 1;
+$h6-list: 0, 1, 1, 1, 1, 1;
+
+@mixin fontProperties(){
+  font-size: ms(0);
+  line-height: ms(0);
+}
+
 
 @mixin fontMultiScreen($default, $phone, $tablet-portrait, $tablet-landscape, $desktop, $large-desktop) {
   font-size: ms($default);
+  line-height: ms($default);
   @include respond-to(phone) {
     font-size: ms($phone);
+    line-height: ms(1);
   }
   @include respond-to(tablet-portrait) {
     font-size: ms($tablet-portrait);
+    line-height: ms(1);
   }
   @include respond-to(tablet-landscape-desktop) {
     font-size: ms($tablet-landscape);
+    line-height: ms(1);
   }
   @include respond-to(desktop) {
     font-size: ms($desktop);
+    line-height: ms(1);
   }
   @include respond-to(large-desktop) {
     font-size: ms($large-desktop);
+    line-height: ms(1);
   }
 }
 
@@ -67,5 +79,5 @@ $h6-list: 0, 0, 0, 0, 1, 1;
 }
 
 @mixin basicParagraphFont {
-  @include fontMultiScreen(0, 1, 1, 1, 1, 1);
+  @include fontMultiScreen(0, 0, 0, 1, 1, 1);
 }

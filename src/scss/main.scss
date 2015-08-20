@@ -32,11 +32,8 @@ body {
   background-color: #fff;
 }
 
-pre, code {
+pre code, blockquote, .post-content > ul > * {
   font-size: ms(0);
-}
-
-pre code {
   @include titlePropertiesList((0, 0, 0, 1, 1, 1));
 }
 
@@ -47,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  @include ease-in-out-transition(0.2s);
+  @include ease-in-out-transition(0.1s);
 }
 
 .body-wrap {
@@ -58,7 +55,7 @@ a {
 }
 
 .default-speed {
-  @include animation-duration(900ms);
+  @include animation-duration(400ms);
 
   @include animation-delay(0ms);
 }
@@ -257,7 +254,7 @@ ul.social {
   opacity: 0;
   z-index: 70;
 
-  @include ease-in-out-transition(0.3s);
+  @include ease-in-out-transition(0.1s);
 
   &.open {
     top: 0;
@@ -316,7 +313,7 @@ ul.social {
           margin-top: 10px;
           opacity: 0;
 
-          @include ease-in-out-transition(0.3s);
+          @include ease-in-out-transition(0.1s);
 
           &.searching {
             opacity: 1;
@@ -1515,7 +1512,7 @@ body[data-uppercase="true"] .widget .widget-title h3 {
     }
 
     .btn-theme {
-      @include ease-in-out-transition(0.2s);
+      @include ease-in-out-transition(0.1s);
 
       background-color: #ddd;
       border-color: #ddd;
@@ -1638,7 +1635,7 @@ body[data-uppercase="true"] .widget .widget-title h3 {
   padding: 5px 20px;
   color: $general-font-color;
 
-  @include ease-in-out-transition(0.2s);
+  @include ease-in-out-transition(0.1s);
 }
 
 body[data-uppercase="true"] .widget .widget-content .btn-resume {

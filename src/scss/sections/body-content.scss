@@ -99,25 +99,25 @@
         text-decoration: none;
         @include ease-in-out-transition(0.1s);
         a {
-          @include titlePropertiesList((0,-1,-1,0,0,0));
+          @include titlePropertiesList((0,0,0,0,0,0));
           font-weight: 700;
           color: #fff;
           position: relative;
           text-decoration: none;
-          @include ease-in-out-transition(0.2s);
+          @include ease-in-out-transition(0.1s);
         }
       }
       &>.post-meta {
-        @include titlePropertiesList($h4-list);
+        @include titlePropertiesList((0,0,0,0,0,0));
         @include filter(invert(15%));
       }
       &>.post-excerpt {
-        @include titlePropertiesList($h3-list);
+        @include titlePropertiesList((0,0,0,1,1,1));
         @include filter(invert(5%));
         margin-bottom: 20px;
       }
       &>.post-action {
-        font-size: ms(2);
+        @include titlePropertiesList((0,0,0,1,1,1));
       }
       .post-action .read-more {
         color: #fff;

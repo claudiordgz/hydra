@@ -42,7 +42,7 @@
           max-width: 200px;
         }
         &.text {
-          @include titlePropertiesList((1, 1, 1, 2, 3, 4));
+          @include titlePropertiesList((1, 1, 1, 2, 2, 3));
           font-weight: 700;
           text-transform: uppercase;
           color: #fff;
@@ -111,7 +111,7 @@
         left: 0;
         width: 100%;
         @include transform(scaleX(0));
-        @include ease-in-out-transition(0.3s);
+        @include ease-in-out-transition(0.1s);
         @include transition-delay(0s);
       }
       &:hover:before {
@@ -122,7 +122,7 @@
       @include transform(scaleX(1));
     }
   }
-  &.fixed-top[data-color-scheme="light"] .header-wrap .nav-container {
+  &.fixed-top .header-wrap .nav-container {
     .standard-nav > li > a {
       color: $general-font-color;
       &:before {
