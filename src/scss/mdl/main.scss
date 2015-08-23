@@ -140,3 +140,38 @@ blockquote {
 .mdl-card-6-col {
   max-width: 100%;
 }
+
+.image-card {
+  height: 0;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  .mdl-card__title {
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    width: 100%;
+    color: #fff;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+
+  .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+
+  .image-card__filename {
+    color: #fff;
+    font-weight: 500;
+  }
+}
