@@ -33,8 +33,7 @@ body {
 }
 
 pre code, blockquote, .post-content > ul > * {
-  font-size: ms(0);
-  @include titlePropertiesList((0, 0, 0, 1, 1, 1));
+  @include titlePropertiesList((0, 0, 0, 0, 1, 1));
 }
 
 h1, h2, h3, h4, h5, h6 {
