@@ -20,6 +20,7 @@
     "hammerjs": "^2.0.4",
     "hashmark": "^3.0.0",
     "jade": "^1.11.0",
+    "jquery.mb.ytplayer": "^2.9.4",
     "material-design-icons": "^2.0.0",
     "material-design-lite": "^1.0.3",
     "minifyify": "^7.0.3",
