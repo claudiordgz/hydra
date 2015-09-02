@@ -1,0 +1,18 @@
+{{#if post}}
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.eot"}}"); /* For IE6-8 */
+            src: local('Material Icons'),
+            local('MaterialIcons-Regular'),
+            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff2"}}") format('woff2'),
+            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff"}}") format('woff'),
+            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.ttf"}}") format('truetype');
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{asset "vendor/material-design-lite/material.min.css"}}">
+{{/if}}
+{{>css/bundle}}
+{{>user/analytics}}
