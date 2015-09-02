@@ -432,7 +432,7 @@ sfApp =
 
 ###================================================================###
 
-###  2. Initialing
+###  2. Initializing
 /*================================================================
 ###
 
@@ -443,6 +443,14 @@ themeRefreshIntro =  () ->
 
 init = () ->
   sfApp.setup()
+  lazyLoadInstance = null
+  lazyLoadInstance = new LazyLoad({
+    callback_processed: (elementsLeft) ->
+      if elementsLeft == 0
+        if lazyLoadInstance
+          lazyLoadInstance.destroy()
+          lazyLoadInstance = null
+  });
   util.addEvent window, 'resize', (event) ->
     themeRefreshIntro()
 
