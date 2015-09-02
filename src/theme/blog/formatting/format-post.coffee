@@ -1,5 +1,8 @@
 
 util = require "../../common/util"
+scriptLoading = require "../../common/dom-manipulation/main"
+
+extraLibLoaded = ->
 
 formatBlog = () ->
   if $('.post').length and ($('body').is('.post-template') or $('body').attr('data-post-mode') == 'multimedia' and ($('body').is('.home-template') or $('body').is('.archive-template') or $('body').is('.tag-template')))
@@ -11,6 +14,7 @@ formatBlog = () ->
         $line = $postHeader.find('.line')
         # Video Post only by IFRAME
         if $postContent.has('iframe[src^="//www.youtube.com"]').length
+          scriptLoading.loadScript document.extraDependencies['tether'], false, null, extraLibLoaded
           $videoEl = $postContent.find('iframe[src^="//www.youtube.com"]')
           regExp = /youtube(-nocookie)?\.com\/(embed|v)\/([\w_-]+)/
           regResult = $videoEl.attr('src').match(regExp)
