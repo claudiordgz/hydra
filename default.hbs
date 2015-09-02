@@ -35,26 +35,9 @@
     <meta property="og:site_name" content="{{@blog.title}}">
     <meta property="fb:admins" content="">
     {{/if}}
-    {{#if post}}
-    <style>
-        @font-face {
-            font-family: 'Material Icons';
-            font-style: normal;
-            font-weight: 400;
-            src: url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.eot"}}"); /* For IE6-8 */
-            src: local('Material Icons'),
-            local('MaterialIcons-Regular'),
-            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff2"}}") format('woff2'),
-            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.woff"}}") format('woff'),
-            url("{{asset "vendor/material-design-icons/iconfont/MaterialIcons-Regular.ttf"}}") format('truetype');
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="{{asset "vendor/material-design-lite/material.min.css"}}">
-    {{/if}}
-    {{>css/bundle}}
+    {{>dependencies/header-dependencies}}
     {{ghost_head}}
     <script type="text/javascript"> var SF_THEME_OPTIONS = { global : {   rootUrl : '{{@blog.url}}' } }</script>
-    {{>user/analytics}}
 </head>
 <body class="{{body_class}} {{block "customBodyClass"}}"
     data-site-layout="wide" {{!Site Layout Options: change it to 'boxed' or 'wide'  }}
@@ -75,40 +58,7 @@
         </div>
     </div>
     {{ghost_foot}}
-    {{#if post}}
-        <script>
-            var links = ["{{asset "css/Roboto.css"}}",
-                "{{asset "vendor/bootstrap/dist/css/bootstrap.min.css"}}",
-                "{{asset "css/prism.min.css"}}", "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}",
-                "{{asset "css/YTPlayer.css"}}"];
-            var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
-        </script>
-        <script>
-            [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            });
-        </script>
-        <script type="text/javascript" src="{{asset "vendor/hammer/hammer.min.js"}}"></script>
-        <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-        <script type="text/javascript" src="{{asset "js/main.post.js"}}"></script>
-    {{else}}
-        <script>
-            var links = ["{{asset "css/Roboto.css"}}", "{{asset "vendor/bootstrap/dist/css/bootstrap.min.css"}}",
-                "{{asset "css/font-awesome.min.css"}}", "{{asset "css/magnific-popup.min.css"}}"];
-            var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
-        </script>
-        <script async type="text/javascript" src="{{asset "js/main.js"}}"></script>
-    {{/if}}
-    <script async type="text/javascript" src="{{asset "vendor/bootstrap/dist/js/bootstrap.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "vendor/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/waveform.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/jqBootstrapValidation.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/imagesloaded.pkgd.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/pace.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/jquery.placeholder.min.js"}}"></script>
-    <script async type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
+    {{>dependencies/footer-dependencies}}
     {{{block "customScript"}}}
 </body>
 </html>
