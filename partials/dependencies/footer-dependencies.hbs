@@ -1,3 +1,4 @@
+<script type="text/javascript" src="{{asset "vendor/lazyload/dist/lazyload.min.js"}}"></script>
 {{#if post}}
     <script>
         var links = ["{{asset "css/Roboto.css"}}",
@@ -5,7 +6,7 @@
             "{{asset "css/prism.min.css"}}",
             "{{asset "css/font-awesome.min.css"}}",
             "{{asset "css/magnific-popup.min.css"}}",
-            "{{asset "vendor/jquery.mb.ytplayer/dist/css/jquery.mb.YTPlayer.css"}}"];
+            "{{asset "vendor/jquery.mb.ytplayer/dist/css/jquery.mb.YTPlayer.min.css"}}"];
         var cb=function(){for(var e=0;e!=links.length;++e){var n=document.createElement("link");n.rel="stylesheet",n.href=links[e];var t=document.getElementsByTagName("head")[0];t.parentNode.insertBefore(n,t)}},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(cb):window.addEventListener("load",cb);
     </script>
     <script>
