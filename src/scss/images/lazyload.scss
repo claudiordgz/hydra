@@ -1,0 +1,18 @@
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+
+  &:not([src]) {
+    visibility: hidden;
+  }
+
+  @-moz-document url-prefix() {
+    &:-moz-loading {
+      visibility: hidden;
+    }
+  }
+}
+
+
