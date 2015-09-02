@@ -22,7 +22,7 @@
     "jade": "^1.11.0",
     "jquery.mb.ytplayer": "^2.9.4",
     "material-design-icons": "^2.0.0",
-    "material-design-lite": "^1.0.3",
+    "material-design-lite": "1.0.3",
     "minifyify": "^7.0.3",
     "modularscale-sass": "^2.1.1",
     "moment": "^2.10.6",
