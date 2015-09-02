@@ -79,3 +79,4 @@ src/dist
 node_modules
 
 experimental/bootstrap
+experimental/lazyload
